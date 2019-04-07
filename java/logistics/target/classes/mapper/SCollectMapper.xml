@@ -57,4 +57,8 @@
     select c_id, phone, name, s_id
     from s_collect
   </select>
+  <select id="count" resultType="java.lang.Integer">
+      select count(*)
+    from s_collect
+  </select>
 </mapper>

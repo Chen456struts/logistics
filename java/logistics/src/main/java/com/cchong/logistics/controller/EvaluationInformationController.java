@@ -113,7 +113,7 @@ public class EvaluationInformationController {
             if (list == null) {
                 return new Result().successMessage("无数据");
             } else {
-                return new Result(0, "ok", list, evaluationInformationService.count());
+                return new Result(200, "ok", list, evaluationInformationService.count());
             }
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());

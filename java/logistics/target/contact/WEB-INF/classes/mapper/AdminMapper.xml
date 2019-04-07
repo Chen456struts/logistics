@@ -59,4 +59,8 @@
     select a_id, a_account, a_password, a_rank, remarks
     from admin
   </select>
+  <select id="count" resultType="java.lang.Integer">
+      select count(*)
+    from admin
+  </select>
 </mapper>

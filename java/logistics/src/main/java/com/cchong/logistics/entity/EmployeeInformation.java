@@ -64,7 +64,7 @@ public class EmployeeInformation {
      *
      * @mbg.generated
      */
-    private String firmName;
+    private Integer firmName;
 
     /**
      *
@@ -227,7 +227,7 @@ public class EmployeeInformation {
      *
      * @mbg.generated
      */
-    public String getFirmName() {
+    public Integer getFirmName() {
         return firmName;
     }
 
@@ -239,8 +239,8 @@ public class EmployeeInformation {
      *
      * @mbg.generated
      */
-    public void setFirmName(String firmName) {
-        this.firmName = firmName == null ? null : firmName.trim();
+    public void setFirmName(Integer firmName) {
+        this.firmName = firmName;
     }
 
     /**

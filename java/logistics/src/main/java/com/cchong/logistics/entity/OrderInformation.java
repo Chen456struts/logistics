@@ -20,7 +20,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    private Integer oType;
+    private String oType;
 
     /**
      *
@@ -83,7 +83,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    private Integer sId;
+    private String sId;
 
     /**
      *
@@ -92,7 +92,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    private Integer dId;
+    private String dId;
 
     /**
      *
@@ -110,7 +110,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    private Integer eId;
+    private String eId;
 
     /**
      *
@@ -153,7 +153,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public Integer getoType() {
+    public String getoType() {
         return oType;
     }
 
@@ -165,8 +165,8 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public void setoType(Integer oType) {
-        this.oType = oType;
+    public void setoType(String oType) {
+        this.oType = oType == null ? null : oType.trim();
     }
 
     /**
@@ -321,7 +321,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public Integer getsId() {
+    public String getsId() {
         return sId;
     }
 
@@ -333,8 +333,8 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public void setsId(Integer sId) {
-        this.sId = sId;
+    public void setsId(String sId) {
+        this.sId = sId == null ? null : sId.trim();
     }
 
     /**
@@ -345,7 +345,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public Integer getdId() {
+    public String getdId() {
         return dId;
     }
 
@@ -357,8 +357,8 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public void setdId(Integer dId) {
-        this.dId = dId;
+    public void setdId(String dId) {
+        this.dId = dId == null ? null : dId.trim();
     }
 
     /**
@@ -393,7 +393,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public Integer geteId() {
+    public String geteId() {
         return eId;
     }
 
@@ -405,8 +405,8 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public void seteId(Integer eId) {
-        this.eId = eId;
+    public void seteId(String eId) {
+        this.eId = eId == null ? null : eId.trim();
     }
 
     /**

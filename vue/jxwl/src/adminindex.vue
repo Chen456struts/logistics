@@ -12,7 +12,7 @@
 </style>
 <style scoped>
 	.ivu-layout-header{
-		z-index: 999;
+		z-adminindex: 999;
 }
 .ivu-menu-horizontal,.layout-logo,.ivu-layout-header{
 	height: 50px;
@@ -48,7 +48,7 @@
 					<div class="layout-logo" style="left:-50px;top:0px;width:50%;text-align: center; ">
 						<Menu mode="horizontal" @on-select="topfu" :accordion="true" :theme="theme" active-name="1">
 							<div class="layout-logo" style="left:0;top:0;width: 200px;;text-align: center;padding-left: 6px;">
-								<router-Link to="/index/">
+								<router-Link to="/adminindex/">
 									<MenuItem name="控制台">
 									<h3>锦轩物流管理系统</h3>
 									</MenuItem>
@@ -56,20 +56,20 @@
 							</div>
 							
 							
-							<router-Link to="/index/">
+							<router-Link to="/adminindex/">
 								<MenuItem name="控制台">
 								<Icon type="ios-paper" />
 								控制台
 								</MenuItem>
 							</router-Link>
 							
-							<router-Link to="/index/noticSelect">
+							<router-Link to="/adminindex/noticSelect">
 								<MenuItem name="工作安排">
 								<Icon type="ios-people" />
 								工作安排
 								</MenuItem>
 							</router-Link>
-							<router-Link to="/index/workArrangementSelect">
+							<router-Link to="/adminindex/workArrangementSelect">
 								<MenuItem name="公告管理">
 								<Icon type="ios-people" />
 								公告管理
@@ -128,7 +128,7 @@
 						</Submenu>
 							<MenuItem name="3" @click.native="logout">
 							<Icon type="ios-exit-outline" />
-							<span>注销</span>
+							<span>退出</span>
 							</MenuItem>
 					</div>
 					
@@ -144,20 +144,20 @@
 								<Icon type="logo-yen" />
 								前台用户管理
 							</template>
-							<router-Link to="/index/financialManagementSelect">
+							<router-Link to="/adminindex/shipperInformationSelect">
 								<MenuItem name="货主管理">货主管理</MenuItem>
 							</router-Link>
-							<router-Link to="/index/financialManagementSelect">
+							<router-Link to="/adminindex/driverInformationSelect">
 								<MenuItem name="司机管理">司机管理</MenuItem>
 							</router-Link>
-							<router-Link to="/index/financialManagementSelect">
+							<router-Link to="/adminindex/financialManagementSelect">
 								<MenuItem name="司机载重管理">司机载重管理</MenuItem>
 							</router-Link>
-								<router-Link to="/index/financialManagementSelect">
+								<router-Link to="/adminindex/financialManagementSelect">
 								<MenuItem name="司机车辆管理">司机车辆管理</MenuItem>
 							</router-Link>
 							</router-Link>
-								<router-Link to="/index/financialManagementSelect">
+								<router-Link to="/adminindex/financialManagementSelect">
 								<MenuItem name="评论管理">评论管理</MenuItem>
 							</router-Link>
 						</Submenu>
@@ -166,7 +166,7 @@
 								<Icon type="ios-paper-outline" />
 								货源管理
 							</template>
-							<router-Link to="/index/minutesOfTheMeetingSelect">
+							<router-Link to="/adminindex/minutesOfTheMeetingSelect">
 								<MenuItem name="货源列表">货源列表</MenuItem>
 							</router-Link>
 						</Submenu>
@@ -175,28 +175,28 @@
 								<Icon type="md-done-all"></Icon>
 								订单管理
 							</template>
-							<router-Link to="/index/attendanceSelect">
+							<router-Link to="/adminindex/attendanceSelect">
 								<MenuItem name="全部订单">全部订单</MenuItem>
 							</router-Link>
-							<router-Link to="/index/attendanceSelect">
+							<router-Link to="/adminindex/attendanceSelect">
 								<MenuItem name="待运输订单">待运输订单</MenuItem>
 							</router-Link>
-							<router-Link to="/index/attendanceSelect">
+							<router-Link to="/adminindex/attendanceSelect">
 								<MenuItem name="运输中订单">运输中订单</MenuItem>
 							</router-Link>
-							<router-Link to="/index/attendanceSelect">
+							<router-Link to="/adminindex/attendanceSelect">
 								<MenuItem name="已完成订单">已完成订单</MenuItem>
 							</router-Link>
-							<router-Link to="/index/attendanceSelect">
+							<router-Link to="/adminindex/attendanceSelect">
 								<MenuItem name="司机轨迹查看">司机轨迹查看</MenuItem>
 							</router-Link>
-							<router-Link to="/index/attendanceSelect">
+							<router-Link to="/adminindex/attendanceSelect">
 								<MenuItem name="订单回单上传确认">订单回单上传确认</MenuItem>
 							</router-Link>
-							<router-Link to="/index/attendanceSelect">
+							<router-Link to="/adminindex/attendanceSelect">
 								<MenuItem name="订单评价管理">订单评价管理</MenuItem>
 							</router-Link>	
-							<router-Link to="/index/attendanceSelect">
+							<router-Link to="/adminindex/attendanceSelect">
 								<MenuItem name="运输合同管理">运输合同管理</MenuItem>
 							</router-Link>
 						</Submenu>
@@ -205,19 +205,19 @@
 								<Icon type="ios-ribbon" />
 								数据报表
 							</template>
-							<router-Link to="/index/personalMeritRecordSelect">
+							<router-Link to="/adminindex/personalMeritRecordSelect">
 								<MenuItem name="货源发布统计">货源发布统计</MenuItem>
 							</router-Link>
-							<router-Link to="/index/departmentalExcellenceRecordSelect">
+							<router-Link to="/adminindex/departmentalExcellenceRecordSelect">
 								<MenuItem name="订单统计">订单统计</MenuItem>
 							</router-Link>
-							<router-Link to="/index/departmentalExcellenceRecordSelect">
+							<router-Link to="/adminindex/departmentalExcellenceRecordSelect">
 								<MenuItem name="货运部发货冬季月报表">货运部发货冬季月报表</MenuItem>
 							</router-Link>
-							<router-Link to="/index/departmentalExcellenceRecordSelect">
+							<router-Link to="/adminindex/departmentalExcellenceRecordSelect">
 								<MenuItem name="司机注册统计">司机注册统计</MenuItem>
 							</router-Link>
-							<router-Link to="/index/departmentalExcellenceRecordSelect">
+							<router-Link to="/adminindex/departmentalExcellenceRecordSelect">
 								<MenuItem name="货主注册统计">货主注册统计</MenuItem>
 							</router-Link>
 						</Submenu>
@@ -226,13 +226,13 @@
 								<Icon type="ios-people"></Icon>
 								财务管理
 							</template>
-							<router-Link to="/index/memberInformationSelect">
+							<router-Link to="/adminindex/memberInformationSelect">
 								<MenuItem name="订单打款管理">订单打款管理</MenuItem>
 							</router-Link>
-							<router-Link to="/index/memberInformationselectEcharts">
+							<router-Link to="/adminindex/memberInformationselectEcharts">
 								<MenuItem name="用户充值管理">用户充值管理</MenuItem>
 							</router-Link>
-								<router-Link to="/index/memberInformationselectEcharts">
+								<router-Link to="/adminindex/memberInformationselectEcharts">
 								<MenuItem name="用户提现管理">用户提现管理</MenuItem>
 							</router-Link>
 						</Submenu>
@@ -241,19 +241,19 @@
 								<Icon type="ios-keypad"></Icon>
 								平台内容管理
 							</template>
-							<router-Link to="/index/jurisdictionSelect">
+							<router-Link to="/adminindex/jurisdictionSelect">
 								<MenuItem name="系统轮播管理">系统轮播管理</MenuItem>
 							</router-Link>
-							<router-Link to="/index/classTableSelect">
+							<router-Link to="/adminindex/classTableSelect">
 								<MenuItem name="系统反馈管理">系统反馈管理</MenuItem>
 							</router-Link>
-							<router-Link to="/index/typeOfMeetingSelect">
+							<router-Link to="/adminindex/typeOfMeetingSelect">
 								<MenuItem name="系统通知管理">系统通知管理</MenuItem>
 							</router-Link>
-							<router-Link to="/index/exchangeTableSelect">
+							<router-Link to="/adminindex/exchangeTableSelect">
 								<MenuItem name="系统内容展示管理">系统内容展示管理</MenuItem>
 							</router-Link>
-							<router-Link to="/index/departmentTypeSelect">
+							<router-Link to="/adminindex/departmentTypeSelect">
 								<MenuItem name="新闻管理">新闻管理</MenuItem>
 							</router-Link>
 						</Submenu>
@@ -262,7 +262,7 @@
 								<Icon type="ios-people"></Icon>
 								系统参数
 							</template>
-							<router-Link to="/index/memberInformationSelect">
+							<router-Link to="/adminindex/memberInformationSelect">
 								<MenuItem name="系统参数设置">系统参数设置</MenuItem>
 							</router-Link>
 						</Submenu>
@@ -310,18 +310,7 @@
 		},
 		methods: {
 			logout() {
-				var th = this;
-				axios.get(th.url + '/login/logout').then(function(res) {
-					if (res.data.code == 1028) {
-						th.$Message.success(res.data.message);
-						localStorage.setItem("accessToken", null);
-						setTimeout(function() {
 							window.location.href = "/";
-						}, 900);
-
-					}
-				});
-
 			},
 			ok() {
 				var th = this;

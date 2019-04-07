@@ -63,4 +63,8 @@
     select c_id, c_date, mileage, c_starting, remarks, c_type
     from collection_fee
   </select>
+  <select id="count" resultType="java.lang.Integer">
+      select count(*)
+    from collection_fee
+  </select>
 </mapper>

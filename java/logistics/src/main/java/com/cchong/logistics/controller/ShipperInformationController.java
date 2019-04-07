@@ -113,7 +113,7 @@ public class ShipperInformationController {
             if (list == null) {
                 return new Result().successMessage("无数据");
             } else {
-                return new Result(0, "ok", list, shipperInformationService.count());
+                return new Result(200, "ok", list, shipperInformationService.count());
             }
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());
