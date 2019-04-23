@@ -1,8 +1,10 @@
 package com.cchong.logistics.dao;
 
 import com.cchong.logistics.entity.OrderInformation;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import javax.ws.rs.PathParam;
 import java.util.List;
 
 @Repository
@@ -13,7 +15,7 @@ public interface OrderInformationMapper {
      * @param id
      * @return
      */
-    int deleteByPrimaryKey(int id);
+    int deleteByPrimaryKey(String id);
 
     /**
      * 添加操作
@@ -51,4 +53,10 @@ public interface OrderInformationMapper {
      * @return
      */
     int count();
+    //根据订单状态查询、订单编号、联系人号码查询
+    List<OrderInformation> selectStart(@Param("oState") String oState,@Param("oId") String oId,@Param("contacts") String contacts);
+    //根据订单状态查询、订单编号、联系人号码查询
+    int countStart(@Param("oState") String oState,@Param("oId") String oId,@Param("contacts") String contacts);
+
+    int countType(@Param("type") String type,@Param("sId") int sId,@Param("dId")  int dId);
 }

@@ -1,5 +1,8 @@
 package com.cchong.logistics.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class EmployeeInformation {
@@ -37,6 +40,8 @@ public class EmployeeInformation {
      *
      * @mbg.generated
      */
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date eBirthhday;
 
     /**
@@ -64,7 +69,7 @@ public class EmployeeInformation {
      *
      * @mbg.generated
      */
-    private Integer firmName;
+    private String firmName;
 
     /**
      *
@@ -227,7 +232,7 @@ public class EmployeeInformation {
      *
      * @mbg.generated
      */
-    public Integer getFirmName() {
+    public String getFirmName() {
         return firmName;
     }
 
@@ -239,8 +244,8 @@ public class EmployeeInformation {
      *
      * @mbg.generated
      */
-    public void setFirmName(Integer firmName) {
-        this.firmName = firmName;
+    public void setFirmName(String firmName) {
+        this.firmName = firmName == null ? null : firmName.trim();
     }
 
     /**

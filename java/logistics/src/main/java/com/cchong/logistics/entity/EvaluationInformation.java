@@ -1,7 +1,5 @@
 package com.cchong.logistics.entity;
 
-import java.util.Date;
-
 public class EvaluationInformation {
     /**
      *
@@ -19,7 +17,7 @@ public class EvaluationInformation {
      *
      * @mbg.generated
      */
-    private String dId;
+    private Integer dId;
 
     /**
      *
@@ -37,7 +35,7 @@ public class EvaluationInformation {
      *
      * @mbg.generated
      */
-    private Date sId;
+    private Integer sId;
 
     /**
      *
@@ -98,7 +96,7 @@ public class EvaluationInformation {
      *
      * @mbg.generated
      */
-    public String getdId() {
+    public Integer getdId() {
         return dId;
     }
 
@@ -110,8 +108,8 @@ public class EvaluationInformation {
      *
      * @mbg.generated
      */
-    public void setdId(String dId) {
-        this.dId = dId == null ? null : dId.trim();
+    public void setdId(Integer dId) {
+        this.dId = dId;
     }
 
     /**
@@ -146,7 +144,7 @@ public class EvaluationInformation {
      *
      * @mbg.generated
      */
-    public Date getsId() {
+    public Integer getsId() {
         return sId;
     }
 
@@ -158,7 +156,7 @@ public class EvaluationInformation {
      *
      * @mbg.generated
      */
-    public void setsId(Date sId) {
+    public void setsId(Integer sId) {
         this.sId = sId;
     }
 

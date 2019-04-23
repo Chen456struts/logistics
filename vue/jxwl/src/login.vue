@@ -25,12 +25,12 @@
 						<Button type="success" onclick="return false" long> 进入管理员 </Button>
 						<br />
 					</a>
-					<a href="#/index" @click="handleSubmit()">
-						<Button type="success" onclick="return false" long> 进入客户 </Button>
+					<a href="#/index" @click="handleSubmithz()">
+						<Button type="success" onclick="return false" long> 进入货主 </Button>
 					<br />
 					</a>
-					<a href="#/index" @click="handleSubmit()">
-						<Button type="success" onclick="return false" long> 进入货主 </Button>
+					<a href="#/index" @click="handleSubmitsj()">
+						<Button type="success" onclick="return false" long> 进入司机 </Button>
 					<br />
 					</a>
 				</FormItem>
@@ -61,8 +61,13 @@
 		methods: {
 			handleSubmit(){
 				window.location.href = "#/adminindex";
+				},
+			handleSubmithz(){
+				window.location.href = "#/khindex";
+				},
+				handleSubmitsj(){
+					window.location.href = "#/czindex";
 				}
-
 		}
 	}
 </script>

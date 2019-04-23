@@ -21,7 +21,7 @@ public class OrderInformationServiceImpl implements OrderInformationService {
      * @return
      */
     @Override
-    public int deleteByPrimaryKey(int id) {
+    public int deleteByPrimaryKey(String id) {
         return orderInformationMapper.deleteByPrimaryKey(id);
     }
 
@@ -45,6 +45,11 @@ public class OrderInformationServiceImpl implements OrderInformationService {
     @Override
     public OrderInformation selectByPrimaryKey(int id) {
         return orderInformationMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int countType(String type,int sId, int dId) {
+        return orderInformationMapper.countType(type,sId,dId);
     }
 
     /**
@@ -76,4 +81,15 @@ public class OrderInformationServiceImpl implements OrderInformationService {
     public int count() {
         return orderInformationMapper.count();
     }
+
+    @Override
+    public List<OrderInformation> selectStart(String oState, String oId, String contacts) {
+        return orderInformationMapper.selectStart(oState, oId, contacts);
+    }
+
+    @Override
+    public int countStart(String oState, String oId, String contacts) {
+        return orderInformationMapper.countStart(oState, oId, contacts);
+    }
+
 }

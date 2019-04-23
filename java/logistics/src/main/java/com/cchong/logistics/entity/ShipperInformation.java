@@ -1,5 +1,8 @@
 package com.cchong.logistics.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -56,7 +59,7 @@ public class ShipperInformation {
      *
      * @mbg.generated
      */
-    private Integer sUuid;
+    private String sUuid;
 
     /**
      *
@@ -74,6 +77,8 @@ public class ShipperInformation {
      *
      * @mbg.generated
      */
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date registerDate;
 
     /**
@@ -204,7 +209,7 @@ public class ShipperInformation {
      *
      * @mbg.generated
      */
-    public Integer getsUuid() {
+    public String getsUuid() {
         return sUuid;
     }
 
@@ -216,8 +221,8 @@ public class ShipperInformation {
      *
      * @mbg.generated
      */
-    public void setsUuid(Integer sUuid) {
-        this.sUuid = sUuid;
+    public void setsUuid(String sUuid) {
+        this.sUuid = sUuid == null ? null : sUuid.trim();
     }
 
     /**

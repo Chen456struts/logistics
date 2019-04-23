@@ -1,6 +1,7 @@
 package com.cchong.logistics.dao;
 
 import com.cchong.logistics.entity.ShipperInformation;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -36,7 +37,7 @@ public interface ShipperInformationMapper {
      *
      * @return
      */
-    List<ShipperInformation> selectAll();
+    List<ShipperInformation> selectAll(@Param("sName") String sName, @Param("sPhone") String sPhone, @Param("sSex") String sSex );
 
     /**
      * 根据主键全部修改操作
@@ -50,5 +51,5 @@ public interface ShipperInformationMapper {
      * 查询所有数据
      * @return
      */
-    int count();
+    int count(@Param("sName") String sName, @Param("sPhone") String sPhone, @Param("sSex") String sSex );
 }

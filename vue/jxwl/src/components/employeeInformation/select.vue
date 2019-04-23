@@ -20,7 +20,7 @@
 				<FormItem>
 					<Row>
 						<Col span="8" style="text-align: center;">
-						<Checkbox v-model="dname" label="">会议类型</Checkbox>
+						<Checkbox v-model="dname" label="">会议类型s</Checkbox>
 						</Col>
 						<Col span="16">
 						<Select v-model="minutesOfTheMeeting.tId" filterable>
@@ -65,66 +65,6 @@
 				<Page :total="count" :current="1" @on-change="changePage($event)"></Page>
 			</div>
 		</div>
-		<Modal v-model="modal13" draggable scrollable title="编辑会议记录" @on-ok="ok">
-			<div>
-				<Form ref="formInline" :model="minutesOfTheMeeting" :label-width="80">
-					<FormItem label="会议标题">
-						<Input v-model="minutesOfTheMeeting.mTitle" placeholder="标题"></Input>
-					</FormItem>
-					<FormItem label="会议类型" prop="dId">
-						<Select v-model="minutesOfTheMeeting.tId" placeholder="请选择会议类型">
-							<Option v-for="item in typeofMeeting" :value="item.tId" :key="item.tId">{{ item.tName }}</Option>
-						</Select>
-					</FormItem>
-					<FormItem label="内容" prop="mContexts">
-						<Input v-model="minutesOfTheMeeting.mContexts" type="textarea" :autosize="{minRows: 6,maxRows: 8}" placeholder="内容"></Input>
-					</FormItem>
-
-					<FormItem label="文件上传">
-						<div>
-							<Row>
-								<Col span="12">
-								<Upload name='file' :show-upload-list='false' :on-success='resultMsg' action="http://47.100.245.30:8080/upload/minutesOfTheMeeting">
-									<Button icon="ios-cloud-upload-outline">可拖动上传</Button>
-								</Upload>
-								</Col>
-								<Col span="12"><Input icon="ios-cloud-upload-outline" v-model="minutesOfTheMeeting.mFile" disabled placeholder="没有文件" /></Col>
-							</Row>
-						</div>
-					</FormItem>
-				</Form>
-			</div>
-		</Modal>
-		<Modal v-model="modal14" draggable scrollable title="添加会议记录" @on-ok="oks">
-			<div>
-				<Form ref="formInline" :model="minutesOfTheMeeting" :label-width="80">
-					<FormItem label="会议标题">
-						<Input v-model="minutesOfTheMeeting.mTitle" placeholder="标题"></Input>
-					</FormItem>
-					<FormItem label="会议类型" prop="dId">
-						<Select v-model="minutesOfTheMeeting.tId" placeholder="请选择会议类型">
-							<Option v-for="item in typeofMeeting" :value="item.tId" :key="item.tId">{{ item.tName }}</Option>
-						</Select>
-					</FormItem>
-					<FormItem label="内容" prop="mContexts">
-						<Input v-model="minutesOfTheMeeting.mContexts" type="textarea" :autosize="{minRows: 6,maxRows: 8}" placeholder="内容"></Input>
-					</FormItem>
-		
-					<FormItem label="文件上传">
-						<div>
-							<Row>
-								<Col span="12">
-								<Upload name='file' :show-upload-list='false' :on-success='resultMsg' action="http://47.100.245.30:8080/upload/minutesOfTheMeeting">
-									<Button icon="ios-cloud-upload-outline">可拖动上传</Button>
-								</Upload>
-								</Col>
-								<Col span="12"><Input icon="ios-cloud-upload-outline" v-model="minutesOfTheMeeting.mFile" disabled placeholder="没有文件" /></Col>
-							</Row>
-						</div>
-					</FormItem>
-				</Form>
-			</div>
-		</Modal>
 		
 	</div>
 </template>
@@ -135,7 +75,13 @@
 				dname: false,
 				name: false,
 				dates: false,
-				baDate: [],
+				fs:[
+					{id:1,value:"0-10分"},
+					{id:2,value:"10-20分"},
+					{id:3,value:"20-30分"},
+					{id:4,value:"60分以下"},
+					{id:5,value:"60分以上"}
+					],
 				bd: "",
 				loading: true,
 				url: "http://47.100.245.30:8080",
@@ -254,7 +200,7 @@
 				const th = this;
 				axios.get(th.url + '/minutesOfTheMeeting/selectAll', {
 					params: {
-						pageNum: page
+						page: page
 					}
 				}).then(function(res) {
 					var datares = res.data.data.map((e) => {
@@ -281,7 +227,7 @@
 				const th = this;
 				axios.get(th.url + '/minutesOfTheMeeting/selects', {
 					params: {
-						pageNum: page,
+						page: page,
 						dId:dId,
 						mTitle:th.minutesOfTheMeeting.mTitle,
 						beforeDate:th.baDate[0],

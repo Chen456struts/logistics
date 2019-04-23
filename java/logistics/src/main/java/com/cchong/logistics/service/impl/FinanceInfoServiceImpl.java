@@ -3,6 +3,7 @@ package com.cchong.logistics.service.impl;
 import com.cchong.logistics.dao.FinanceInfoMapper;
 import com.cchong.logistics.entity.FinanceInfo;
 import com.cchong.logistics.service.FinanceInfoService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -75,5 +76,15 @@ public class FinanceInfoServiceImpl implements FinanceInfoService {
     @Override
     public int count() {
         return financeInfoMapper.count();
+    }
+
+    @Override
+    public List<FinanceInfo> selectType(String fName, String fNameType,String fType) {
+        return financeInfoMapper.selectType(fName,fNameType,fType);
+    }
+
+    @Override
+    public int countType( String fName, String fNameType,String fType) {
+        return financeInfoMapper.countType(fName,fNameType,fType);
     }
 }

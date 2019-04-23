@@ -76,4 +76,14 @@ public class DriverInformationServiceImpl implements DriverInformationService {
     public int count() {
         return driverInformationMapper.count();
     }
+
+    @Override
+    public List<DriverInformation> selectVague(String dName, String dPhone, String dSex) {
+        return driverInformationMapper.selectVague(dName,dPhone,dSex);
+    }
+
+    @Override
+    public int countVague(String dName, String dPhone, String dSex) {
+        return driverInformationMapper.countVague(dName,dPhone,dSex);
+    }
 }

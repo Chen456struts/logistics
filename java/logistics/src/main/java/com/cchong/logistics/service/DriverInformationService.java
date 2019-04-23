@@ -50,4 +50,8 @@ public interface DriverInformationService {
      * @return
      */
     int count();
+
+    List<DriverInformation> selectVague(String dName,String dPhone,String dSex );
+
+    int countVague(String dName,String dPhone,String dSex );
 }

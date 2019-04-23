@@ -3,6 +3,7 @@ package com.cchong.logistics.service.impl;
 import com.cchong.logistics.dao.ShipperInformationMapper;
 import com.cchong.logistics.entity.ShipperInformation;
 import com.cchong.logistics.service.ShipperInformationService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -53,8 +54,8 @@ public class ShipperInformationServiceImpl implements ShipperInformationService 
      * @return
      */
     @Override
-    public List<ShipperInformation> selectAll() {
-        return shipperInformationMapper.selectAll();
+    public List<ShipperInformation> selectAll(@Param("sName") String sName, @Param("dPhone") String sPhone, @Param("sSex") String sSex ) {
+        return shipperInformationMapper.selectAll(sName,sPhone,sSex);
     }
 
     /**
@@ -73,7 +74,7 @@ public class ShipperInformationServiceImpl implements ShipperInformationService 
      * @return
      */
     @Override
-    public int count() {
-        return shipperInformationMapper.count();
+    public int count(@Param("sName") String sName, @Param("dPhone") String sPhone, @Param("sSex") String sSex ){
+        return shipperInformationMapper.count(sName,sPhone,sSex);
     }
 }

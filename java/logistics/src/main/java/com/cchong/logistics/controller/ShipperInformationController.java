@@ -74,7 +74,7 @@ public class ShipperInformationController {
     @GetMapping("/selectAll")
     public Result selectAll() {
         try {
-            List<ShipperInformation> list = shipperInformationService.selectAll();
+            List<ShipperInformation> list = shipperInformationService.selectAll("","","");
             if (list == null) {
                 return new Result().successMessage("无数据");
             } else {
@@ -106,14 +106,14 @@ public class ShipperInformationController {
      * @return
      */
     @GetMapping("/selectPage")
-    public Result selectPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int limit) {
+    public Result selectPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int limit,String sName,String sPhone,String sSex) {
         try {
             PageHelper.startPage(page, limit);
-            List<ShipperInformation> list = shipperInformationService.selectAll();
+            List<ShipperInformation> list = shipperInformationService.selectAll(sName,sPhone,sSex);
             if (list == null) {
                 return new Result().successMessage("无数据");
             } else {
-                return new Result(200, "ok", list, shipperInformationService.count());
+                return new Result(0, "ok", list, shipperInformationService.count(sName,sPhone,sSex));
             }
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());

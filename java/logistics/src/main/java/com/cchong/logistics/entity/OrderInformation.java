@@ -1,5 +1,8 @@
 package com.cchong.logistics.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -20,7 +23,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    private String oType;
+    private Integer oType;
 
     /**
      *
@@ -38,6 +41,8 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date startDate;
 
     /**
@@ -47,6 +52,9 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date endDate;
 
     /**
@@ -83,7 +91,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    private String sId;
+    private Integer sId;
 
     /**
      *
@@ -92,7 +100,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    private String dId;
+    private Integer dId;
 
     /**
      *
@@ -110,7 +118,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    private String eId;
+    private Integer eId;
 
     /**
      *
@@ -153,7 +161,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public String getoType() {
+    public Integer getoType() {
         return oType;
     }
 
@@ -165,8 +173,8 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public void setoType(String oType) {
-        this.oType = oType == null ? null : oType.trim();
+    public void setoType(Integer oType) {
+        this.oType = oType;
     }
 
     /**
@@ -321,7 +329,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public String getsId() {
+    public Integer getsId() {
         return sId;
     }
 
@@ -333,8 +341,8 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public void setsId(String sId) {
-        this.sId = sId == null ? null : sId.trim();
+    public void setsId(Integer sId) {
+        this.sId = sId;
     }
 
     /**
@@ -345,7 +353,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public String getdId() {
+    public Integer getdId() {
         return dId;
     }
 
@@ -357,8 +365,8 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public void setdId(String dId) {
-        this.dId = dId == null ? null : dId.trim();
+    public void setdId(Integer dId) {
+        this.dId = dId;
     }
 
     /**
@@ -393,7 +401,7 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public String geteId() {
+    public Integer geteId() {
         return eId;
     }
 
@@ -405,8 +413,8 @@ public class OrderInformation {
      *
      * @mbg.generated
      */
-    public void seteId(String eId) {
-        this.eId = eId == null ? null : eId.trim();
+    public void seteId(Integer eId) {
+        this.eId = eId;
     }
 
     /**

@@ -6,47 +6,25 @@
 <template>
 	<div>
 		<div class="rigtop">
-			<Form ref="minutesOfTheMeeting"  inline>
+			<Form ref="shipperInformation" inline>
 				<FormItem>
 					<Row>
 						<Col span="8" style="text-align: center;">
-						<Checkbox v-model="name" label="">会议标题</Checkbox>
+						<Checkbox label="费用类型" v-model="fylxs">费用类型</Checkbox>
 						</Col>
 						<Col span="16">
-						<Input placeholder="会议标题" v-model="minutesOfTheMeeting.mTitle" ></Input>
+						<Input height="20" v-model="fylx" placeholder="模糊查询费用类型"></Input>
 						</Col>
 					</Row>
 				</FormItem>
-				<FormItem>
-					<Row>
-						<Col span="8" style="text-align: center;">
-						<Checkbox v-model="dname" label="">会议类型</Checkbox>
-						</Col>
-						<Col span="16">
-						<Select v-model="minutesOfTheMeeting.tId" filterable>
-							<Option v-for="item in typeofMeeting"  :value="item.tId" :key="item.tId">{{ item.tName}}</Option>
-						</Select> 
-						</Col>
-					</Row>
-				</FormItem>
-				<FormItem>
-					<Row>
-						<Col span="7" style="text-align: center;">
-						<Checkbox v-model="dates" label="">上传时间</Checkbox>
-						</Col>
-						<Col span="16">
-						<DatePicker type="daterange" placement="bottom-end" @on-change="selectTime(($event))" placeholder="时间查询" style="width: 200px"></DatePicker>
-						</Col>
-					</Row>
-				</FormItem>
-				<FormItem style="position: relative;left: 15px">
-					<Button @click="select(1)">
+				<FormItem style="position: relative;left: 10px">
+					<Button @click="changePage(1)">
 						<Icon type="ios-sync" />快速查询
 					</Button>
 				</FormItem>
 				<FormItem style="position: absolute;right: 30px">
 					<FormItem>
-						<Button  @click="add()">
+						<Button @click="add()">
 							<Icon type="ios-add-circle-outline" />添加记录
 						</Button>
 					</FormItem>
@@ -65,116 +43,89 @@
 				<Page :total="count" :current="1" @on-change="changePage($event)"></Page>
 			</div>
 		</div>
-		<Modal v-model="modal13" draggable scrollable title="编辑会议记录" @on-ok="ok">
-			<div>
-				<Form ref="formInline" :model="minutesOfTheMeeting" :label-width="80">
-					<FormItem label="会议标题">
-						<Input v-model="minutesOfTheMeeting.mTitle" placeholder="标题"></Input>
+		<Modal v-model="modal14" :loading="modal14loading" width="750" scrollable :title="title" @on-ok="addok">
+			<Form ref="formValidate" :model="collectionFee" :label-width="80">
+				<Row>
+					<Col span="8">
+					<FormItem label="编号" prop="cId">
+						<Input v-model="collectionFee.cId" disabled placeholder="自动识别"></Input>
 					</FormItem>
-					<FormItem label="会议类型" prop="dId">
-						<Select v-model="minutesOfTheMeeting.tId" placeholder="请选择会议类型">
-							<Option v-for="item in typeofMeeting" :value="item.tId" :key="item.tId">{{ item.tName }}</Option>
-						</Select>
+					</Col>
+					<Col span="8">
+					<FormItem label="起步价" prop="cStarting">
+						<Input v-model="collectionFee.cStarting" :maxlength=10 placeholder="请输入起步价"></Input>
 					</FormItem>
-					<FormItem label="内容" prop="mContexts">
-						<Input v-model="minutesOfTheMeeting.mContexts" type="textarea" :autosize="{minRows: 6,maxRows: 8}" placeholder="内容"></Input>
+					</Col>
+					<Col span="8">
+					<FormItem label="时间收费/分钟" prop="cDate">
+						<Input v-model="collectionFee.cDate" :maxlength=20 placeholder="请输入时间收费/分钟"></Input>
 					</FormItem>
+					</Col>
+				</Row>
+				<Row>
+					<Col span="8">
+					<FormItem label="里程收费/分钟" prop="mileage">
+						<Input v-model="collectionFee.mileage" :maxlength=20 placeholder="请输入里程收费/分钟"></Input>
+					</FormItem>
+					</Col>
+					<Col span="8">
+					<FormItem label="收费类型" prop="f_type">
+						<Input v-model="collectionFee.cType" :maxlength=20 placeholder="请输入收费类型"></Input>
+					</FormItem>
+					</Col>
+					<Col span="8">
+					<FormItem label="备注" prop="remarks">
+						<Input v-model="collectionFee.remarks" :maxlength=20 placeholder="请输入备注"></Input>
+					</FormItem>
+					</Col>
+				</Row>
+			</Form>
+		</Modal>
 
-					<FormItem label="文件上传">
-						<div>
-							<Row>
-								<Col span="12">
-								<Upload name='file' :show-upload-list='false' :on-success='resultMsg' action="http://47.100.245.30:8080/upload/minutesOfTheMeeting">
-									<Button icon="ios-cloud-upload-outline">可拖动上传</Button>
-								</Upload>
-								</Col>
-								<Col span="12"><Input icon="ios-cloud-upload-outline" v-model="minutesOfTheMeeting.mFile" disabled placeholder="没有文件" /></Col>
-							</Row>
-						</div>
-					</FormItem>
-				</Form>
-			</div>
-		</Modal>
-		<Modal v-model="modal14" draggable scrollable title="添加会议记录" @on-ok="oks">
-			<div>
-				<Form ref="formInline" :model="minutesOfTheMeeting" :label-width="80">
-					<FormItem label="会议标题">
-						<Input v-model="minutesOfTheMeeting.mTitle" placeholder="标题"></Input>
-					</FormItem>
-					<FormItem label="会议类型" prop="dId">
-						<Select v-model="minutesOfTheMeeting.tId" placeholder="请选择会议类型">
-							<Option v-for="item in typeofMeeting" :value="item.tId" :key="item.tId">{{ item.tName }}</Option>
-						</Select>
-					</FormItem>
-					<FormItem label="内容" prop="mContexts">
-						<Input v-model="minutesOfTheMeeting.mContexts" type="textarea" :autosize="{minRows: 6,maxRows: 8}" placeholder="内容"></Input>
-					</FormItem>
-		
-					<FormItem label="文件上传">
-						<div>
-							<Row>
-								<Col span="12">
-								<Upload name='file' :show-upload-list='false' :on-success='resultMsg' action="http://47.100.245.30:8080/upload/minutesOfTheMeeting">
-									<Button icon="ios-cloud-upload-outline">可拖动上传</Button>
-								</Upload>
-								</Col>
-								<Col span="12"><Input icon="ios-cloud-upload-outline" v-model="minutesOfTheMeeting.mFile" disabled placeholder="没有文件" /></Col>
-							</Row>
-						</div>
-					</FormItem>
-				</Form>
-			</div>
-		</Modal>
-		
 	</div>
 </template>
 <script>
 	export default {
 		data() {
 			return {
-				dname: false,
-				name: false,
-				dates: false,
-				baDate: [],
-				bd: "",
+				fylx: "",
+				fylxs: false,
 				loading: true,
-				url: "http://47.100.245.30:8080",
+				modal14: false,
+				loading: true,
+				modal14loading: true,
+				title:'',
+				url: "http://localhost:8080",
 				count: 10,
-				modal13: false,
-				modal14:false,
 				columns7: [{
 						title: '编号',
-						key: 'mId',
+						key: 'cId',
 						align: 'center',
 						width: 100
-					},
-					{
-						title: '会议标题',
-						key: 'mTitle',
+					}, {
+						title: '起步价',
+						key: 'cStarting',
 						align: 'center',
-						width:200,
-						tooltip:true
 					},
 					{
-						title: '会议类型',
-						key: 'tName',
+						title: '时间收费/分钟',
+						key: 'cDate',
+						align: 'center',
+						tooltip: true
+					},
+					{
+						title: '里程收费/分钟',
+						key: 'mileage',
 						align: 'center'
 					},
 					{
-						title: '上传时间',
-						key: 'mDate',
-						align: 'center',
-					}, {
-						title: '操作人',
-						key: 'mName',
-						width: 100,
+						title: '收取费用类型',
+						key: 'cType',
 						tooltip: true,
 						align: 'center'
-					},
-					{
-						title: '内容',
-						key: 'mContexts',
-						width: 200,
+					}, {
+						title: '备注',
+						key: 'remarks',
 						tooltip: true,
 						align: 'center'
 					},
@@ -206,123 +157,86 @@
 									},
 									on: {
 										click: () => {
-
-											this.remove(params.row.mId, params.index)
+											this.remove(params.row.cId)
 										}
-									}
+									}		
 								}, '移除')
 							]);
 						}
 					}
 				],
 				data6: [],
-				minutesOfTheMeeting: {
-					mId: 0,
-					mTitle: "",
-					tId: "",
-					nDate: "",
-					mFile: "",
-					mName: "",
-					mContexts: "",
-				},
-				typeofMeeting: []
+				collectionFee: {
+					cId:0,
+					cDate:'',
+					mileage:'',
+					cStarting:'',
+					remarks:'',
+					cType:''
+				}
 			}
 		},
 		methods: {
-			//导出数据
-			exportData() {
-				this.$refs.table.exportCsv({
-					filename: '会议记录'
-				});
-			},
-			 //间隔时间
-			selectTime(starTime) {
-				this.baDate = starTime;
-			},
-			//编辑弹出
-			show(data) {
-				this.modal13 = true;
-				this.minutesOfTheMeeting.mId = data.mId;
-				this.minutesOfTheMeeting.tId = data.tId;
-				this.minutesOfTheMeeting.mTitle = data.mTitle;
-				this.minutesOfTheMeeting.mFile = data.mFile;
-				this.minutesOfTheMeeting.mName = data.mName;
-				this.minutesOfTheMeeting.mContexts = data.mContexts;
-			},
-			//查询
-			changePage(page) {
-				const th = this;
-				axios.get(th.url + '/minutesOfTheMeeting/selectAll', {
-					params: {
-						pageNum: page
-					}
-				}).then(function(res) {
-					var datares = res.data.data.map((e) => {
-						e.tName = e.typeOfMeeting.tName;
-						return e;
-					})
-					th.data6 = datares;
-					th.count = res.data.count;
-				})
-			},
-			//快速查询
-			select(page){
-				this.loading = true;
-				if (!this.name) {
-					this.minutesOfTheMeeting.mTitle = null;
-				}
-				var dId = this.minutesOfTheMeeting.tId;
-				if (!this.dname) {
-					dId = 0;
-				}
-				if (!this.dates) {
-					this.baDate = ["", ""];
-				}
-				const th = this;
-				axios.get(th.url + '/minutesOfTheMeeting/selects', {
-					params: {
-						pageNum: page,
-						dId:dId,
-						mTitle:th.minutesOfTheMeeting.mTitle,
-						beforeDate:th.baDate[0],
-						afterDate:th.baDate[1],
-					}
-				}).then(function(res) {
-					var datares = res.data.data.map((e) => {
-						e.tName = e.typeOfMeeting.tName;
-						return e;
-					})
-					th.data6 = datares;
-					th.count = res.data.count;
-				})
-				this.loading = false;
-			},
-			//上传文件
-			resultMsg(res) {
-				if (res.code === 1224) {
-					this.minutesOfTheMeeting.mFile = res.data;
-					this.$Message.success(res.message);
-				} else {
-					this.$Message.error(res.message);
-				}
-			},
-			//添加弹出
-			add(){
+			//单击添加
+			add() {
+				this.title = "添加收费";
+				this.collectionFee.cType = '';
 				this.modal14 = true;
-				},
-			//删除
-			remove(mId, index) {
+			},
+			//单击编辑
+			show(data){
+				this.title = '编辑收费';
+				this.collectionFee.cId=data.cId;
+				this.collectionFee.cDate=data.cDate;
+				this.collectionFee.mileage=data.mileage;
+				this.collectionFee.cStarting=data.cStarting;
+				this.collectionFee.remarks=data.remarks;
+				this.collectionFee.cType=data.cType;
+				this.modal14 = true;
+			},
+			//弹出添加保存
+			addok() {
+				const th = this;
+				var urls = "insert";
+				if(this.title == "编辑收费"){
+					urls = "updateByPrimaryKey";
+				}
+				axios.post(th.url + '/collectionFee/'+urls, th.collectionFee, {
+					headers: {
+						"Content-Type": "application/json;charset=utf-8"
+					}
+				}).then(function(res) {
+					if (res.data.code === 200) {
+						th.$Message.success(res.data.message);
+						th.modal14 = false;
+						th.changePage(1);
+					} else {
+							th.modal14show();
+						th.$Message.error(res.data.message);
+					}
+				})
+				
+				
+			},
+			modal14show() {
+				this.modal14 = false;
+				setTimeout(() => {
+					this.modal14 = true;
+				}, 0);
+			},
+			//删除操作
+			remove(id){
 				this.$Modal.confirm({
 					title: '删除提示',
 					content: '<p>移除后不可恢复，确定继续？</p>',
 					onOk: () => {
 						const th = this;
-						axios.get(th.url + '/minutesOfTheMeeting/deleteByPrimaryKey', {
+						axios.get(th.url + '/collectionFee/deleteByPrimaryKey', {
 							params: {
-								mId: mId
+								id: id
 							}
 						}).then(function(res) {
-							if (res.data.code === 1028) {
+							if (res.data.code === 200) {
 								th.$Message.success(res.data.message);
 								th.changePage(1);
 							} else {
@@ -332,50 +246,32 @@
 					}
 				});
 			},
-			//修改
-			ok() {
-				const th = this;
-				axios.post(th.url + '/minutesOfTheMeeting/updateByPrimaryKey', th.minutesOfTheMeeting, {
-					headers: {
-						"Content-Type": "application/json;charset=utf-8"
-					}
-				}).then(function(res) {
-					if (res.data.code === 1028) {
-						th.$Message.success(res.data.message);
-						th.changePage(1);
-					} else {
-						th.$Message.error(res.data.message);
-						th.modal13 = true;
-					}
-				})
+			//导出数据
+			exportData() {
+				this.$refs.table.exportCsv({
+					filename: '司机信息'
+				});
 			},
-			//添加
-			oks() {
+			//查询
+			changePage(page) {
 				const th = this;
-				th.minutesOfTheMeeting.mName = localStorage.getItem("mName");
-				axios.post(th.url + '/minutesOfTheMeeting/insert', th.minutesOfTheMeeting, {
-					headers: {
-						"Content-Type": "application/json;charset=utf-8"
+				if (!th.fylxs) {
+					th.fylx = '';
+				}
+				axios.get(th.url + '/collectionFee/selectPage', {
+					params: {
+						page: page,
+						cType:th.fylx
 					}
 				}).then(function(res) {
-					if (res.data.code === 1028) {
-						th.$Message.success(res.data.message);
-						th.changePage(1);
-					} else {
-						th.$Message.error(res.data.message);
-						th.modal13 = true;
-					}
+					th.data6 = res.data.data;
+					th.count = res.data.count;
 				})
-			}
-		
+				th.loading = false;
+			},
 		},
 		created() {
-			this.select(1);
-			const th = this;
-			axios.get(th.url + '/typeofMeeting/iselectAllStatus')
-				.then(function(res) {
-					th.typeofMeeting = res.data.data;
-				})
+			this.changePage(1);
 		}
 	}
 </script>

@@ -54,37 +54,26 @@
 									</MenuItem>
 								</router-Link>
 							</div>
-							
-							
-							<router-Link to="/adminindex/">
+							<router-Link to="/adminindex">
 								<MenuItem name="控制台">
 								<Icon type="ios-paper" />
 								控制台
 								</MenuItem>
 							</router-Link>
-							
-							<router-Link to="/adminindex/noticSelect">
-								<MenuItem name="工作安排">
-								<Icon type="ios-people" />
-								工作安排
-								</MenuItem>
-							</router-Link>
-							<router-Link to="/adminindex/workArrangementSelect">
-								<MenuItem name="公告管理">
-								<Icon type="ios-people" />
-								公告管理
-								</MenuItem>
-							</router-Link>
+							<MenuItem >
+							<marquee style="width: 400px;position: absolute;">
+								{{gk}}
+								</marquee>
+							</MenuItem>
+								
 						</Menu>
 					</div>
-					
 					<div class="layout-nav">
 						<MenuItem name="5">
 						<Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
 						<Dropdown>
 							{{mName}}
 							<Icon type="ios-arrow-down"></Icon>
-					
 							<DropdownMenu slot="list">
 								<DropdownItem  @click.native="updatepassword">修改密码</DropdownItem>
 							</DropdownMenu>
@@ -150,24 +139,15 @@
 							<router-Link to="/adminindex/driverInformationSelect">
 								<MenuItem name="司机管理">司机管理</MenuItem>
 							</router-Link>
-							<router-Link to="/adminindex/financialManagementSelect">
-								<MenuItem name="司机载重管理">司机载重管理</MenuItem>
+							<router-Link to="/adminindex/vehicleSelect">
+								<MenuItem name="车辆类型管理">车辆类型管理</MenuItem>
 							</router-Link>
-								<router-Link to="/adminindex/financialManagementSelect">
-								<MenuItem name="司机车辆管理">司机车辆管理</MenuItem>
+								<router-Link to="/adminindex/vehicleInfoSelect">
+								<MenuItem name="车辆信息管理">车辆信息管理</MenuItem>
 							</router-Link>
 							</router-Link>
-								<router-Link to="/adminindex/financialManagementSelect">
+								<router-Link to="/adminindex/evaluationInformationSelect">
 								<MenuItem name="评论管理">评论管理</MenuItem>
-							</router-Link>
-						</Submenu>
-						<Submenu name="货源管理">
-							<template slot="title">
-								<Icon type="ios-paper-outline" />
-								货源管理
-							</template>
-							<router-Link to="/adminindex/minutesOfTheMeetingSelect">
-								<MenuItem name="货源列表">货源列表</MenuItem>
 							</router-Link>
 						</Submenu>
 						<Submenu name="订单管理">
@@ -175,29 +155,17 @@
 								<Icon type="md-done-all"></Icon>
 								订单管理
 							</template>
-							<router-Link to="/adminindex/attendanceSelect">
-								<MenuItem name="全部订单">全部订单</MenuItem>
+							<router-Link to="/adminindex/orderInformationSelect">
+								<MenuItem name="订单全部信息">订单全部信息</MenuItem>
 							</router-Link>
-							<router-Link to="/adminindex/attendanceSelect">
+							<router-Link to="/adminindex/orderInformationSelectdys">
 								<MenuItem name="待运输订单">待运输订单</MenuItem>
 							</router-Link>
-							<router-Link to="/adminindex/attendanceSelect">
+							<router-Link to="/adminindex/orderInformationSelectysz">
 								<MenuItem name="运输中订单">运输中订单</MenuItem>
 							</router-Link>
-							<router-Link to="/adminindex/attendanceSelect">
+							<router-Link to="/adminindex/orderInformationSelectywc">
 								<MenuItem name="已完成订单">已完成订单</MenuItem>
-							</router-Link>
-							<router-Link to="/adminindex/attendanceSelect">
-								<MenuItem name="司机轨迹查看">司机轨迹查看</MenuItem>
-							</router-Link>
-							<router-Link to="/adminindex/attendanceSelect">
-								<MenuItem name="订单回单上传确认">订单回单上传确认</MenuItem>
-							</router-Link>
-							<router-Link to="/adminindex/attendanceSelect">
-								<MenuItem name="订单评价管理">订单评价管理</MenuItem>
-							</router-Link>	
-							<router-Link to="/adminindex/attendanceSelect">
-								<MenuItem name="运输合同管理">运输合同管理</MenuItem>
 							</router-Link>
 						</Submenu>
 						<Submenu name="数据报表">
@@ -205,20 +173,11 @@
 								<Icon type="ios-ribbon" />
 								数据报表
 							</template>
-							<router-Link to="/adminindex/personalMeritRecordSelect">
-								<MenuItem name="货源发布统计">货源发布统计</MenuItem>
-							</router-Link>
-							<router-Link to="/adminindex/departmentalExcellenceRecordSelect">
+							<router-Link to="/adminindex/ddtj">
 								<MenuItem name="订单统计">订单统计</MenuItem>
 							</router-Link>
-							<router-Link to="/adminindex/departmentalExcellenceRecordSelect">
-								<MenuItem name="货运部发货冬季月报表">货运部发货冬季月报表</MenuItem>
-							</router-Link>
-							<router-Link to="/adminindex/departmentalExcellenceRecordSelect">
-								<MenuItem name="司机注册统计">司机注册统计</MenuItem>
-							</router-Link>
-							<router-Link to="/adminindex/departmentalExcellenceRecordSelect">
-								<MenuItem name="货主注册统计">货主注册统计</MenuItem>
+							<router-Link to="/adminindex/sjcztj">
+								<MenuItem name="系统人员报表">系统人员报表</MenuItem>
 							</router-Link>
 						</Submenu>
 						<Submenu name="财务管理">
@@ -226,35 +185,23 @@
 								<Icon type="ios-people"></Icon>
 								财务管理
 							</template>
-							<router-Link to="/adminindex/memberInformationSelect">
-								<MenuItem name="订单打款管理">订单打款管理</MenuItem>
+							<router-Link to="/adminindex/financeInfoSelect">
+								<MenuItem name="用户费用信息">用户费用信息</MenuItem>
 							</router-Link>
-							<router-Link to="/adminindex/memberInformationselectEcharts">
-								<MenuItem name="用户充值管理">用户充值管理</MenuItem>
+							<router-Link to="/adminindex/financeInfoSelectcz">
+								<MenuItem name="用户充值信息">用户充值信息</MenuItem>
 							</router-Link>
-								<router-Link to="/adminindex/memberInformationselectEcharts">
-								<MenuItem name="用户提现管理">用户提现管理</MenuItem>
+								<router-Link to="/adminindex/financeInfoSelecttx">
+								<MenuItem name="用户提现信息">用户提现信息</MenuItem>
 							</router-Link>
 						</Submenu>
-						<Submenu name="平台内容管理">
+						<Submenu name="平台收费管理">
 							<template slot="title">
-								<Icon type="ios-keypad"></Icon>
-								平台内容管理
+								<Icon type="ios-people"></Icon>
+								平台收费管理
 							</template>
-							<router-Link to="/adminindex/jurisdictionSelect">
-								<MenuItem name="系统轮播管理">系统轮播管理</MenuItem>
-							</router-Link>
-							<router-Link to="/adminindex/classTableSelect">
-								<MenuItem name="系统反馈管理">系统反馈管理</MenuItem>
-							</router-Link>
-							<router-Link to="/adminindex/typeOfMeetingSelect">
-								<MenuItem name="系统通知管理">系统通知管理</MenuItem>
-							</router-Link>
-							<router-Link to="/adminindex/exchangeTableSelect">
-								<MenuItem name="系统内容展示管理">系统内容展示管理</MenuItem>
-							</router-Link>
-							<router-Link to="/adminindex/departmentTypeSelect">
-								<MenuItem name="新闻管理">新闻管理</MenuItem>
+							<router-Link to="/adminindex/collectionFeeSelect">
+								<MenuItem name="平台收费信息">平台收费信息</MenuItem>
 							</router-Link>
 						</Submenu>
 						<Submenu name="系统参数">
@@ -262,8 +209,11 @@
 								<Icon type="ios-people"></Icon>
 								系统参数
 							</template>
-							<router-Link to="/adminindex/memberInformationSelect">
-								<MenuItem name="系统参数设置">系统参数设置</MenuItem>
+							<router-Link to="/adminindex/adminSelect">
+								<MenuItem name="管理员管理">管理员管理</MenuItem>
+							</router-Link>
+							<router-Link to="/adminindex/noticeSelect">
+								<MenuItem name="公告管理">公告管理</MenuItem>
 							</router-Link>
 						</Submenu>
 					</Menu>
@@ -298,6 +248,7 @@
 				years: "",
 				mName: "小邦哥1",
 				theme: "primary",
+				gk:"长江上海航道处2019年空调和厨房油烟机维保服务采购项目成交公告",
 				parentTag: "控制台",
 				modal13: false,
 				childTag: "",

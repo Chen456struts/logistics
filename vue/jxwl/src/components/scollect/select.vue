@@ -254,7 +254,7 @@
 				const th = this;
 				axios.get(th.url + '/minutesOfTheMeeting/selectAll', {
 					params: {
-						pageNum: page
+						page: page
 					}
 				}).then(function(res) {
 					var datares = res.data.data.map((e) => {
@@ -281,7 +281,7 @@
 				const th = this;
 				axios.get(th.url + '/minutesOfTheMeeting/selects', {
 					params: {
-						pageNum: page,
+						page: page,
 						dId:dId,
 						mTitle:th.minutesOfTheMeeting.mTitle,
 						beforeDate:th.baDate[0],

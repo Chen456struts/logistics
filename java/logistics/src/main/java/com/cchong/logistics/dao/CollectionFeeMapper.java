@@ -36,7 +36,7 @@ public interface CollectionFeeMapper {
      *
      * @return
      */
-    List<CollectionFee> selectAll();
+    List<CollectionFee> selectAll(String cType);
 
     /**
      * 根据主键全部修改操作
@@ -50,5 +50,5 @@ public interface CollectionFeeMapper {
      * 查询所有数据
      * @return
      */
-    int count();
+    int count(String cType);
 }

@@ -47,14 +47,15 @@ public class EvaluationInformationServiceImpl implements EvaluationInformationSe
         return evaluationInformationMapper.selectByPrimaryKey(id);
     }
 
+
     /**
      * 全部查询操作
      *
      * @return
      */
     @Override
-    public List<EvaluationInformation> selectAll() {
-        return evaluationInformationMapper.selectAll();
+    public List<EvaluationInformation> selectAll(int fsid, String sName, String dName) {
+        return evaluationInformationMapper.selectAll(fsid,sName,dName);
     }
 
     /**
@@ -68,12 +69,13 @@ public class EvaluationInformationServiceImpl implements EvaluationInformationSe
         return evaluationInformationMapper.updateByPrimaryKey(evaluationInformation);
     }
 
+
     /**
      * 查询所有数据
      * @return
      */
     @Override
-    public int count() {
-        return evaluationInformationMapper.count();
+    public int count(int fsid, String sName, String dName) {
+        return evaluationInformationMapper.count(fsid,sName,dName);
     }
 }

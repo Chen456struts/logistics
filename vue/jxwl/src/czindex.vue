@@ -12,7 +12,7 @@
 </style>
 <style scoped>
 	.ivu-layout-header{
-		z-index: 999;
+		z-czindex: 999;
 }
 .ivu-menu-horizontal,.layout-logo,.ivu-layout-header{
 	height: 50px;
@@ -48,32 +48,24 @@
 					<div class="layout-logo" style="left:-50px;top:0px;width:50%;text-align: center; ">
 						<Menu mode="horizontal" @on-select="topfu" :accordion="true" :theme="theme" active-name="1">
 							<div class="layout-logo" style="left:0;top:0;width: 200px;;text-align: center;padding-left: 6px;">
-								<router-Link to="/index/">
+								<router-Link to="/czindex/">
 									<MenuItem name="控制台">
 									<h3>锦轩物流司机系统</h3>
 									</MenuItem>
 								</router-Link>
 							</div>
-							
-							<router-Link to="/index/">
+							<router-Link to="/czindex">
 								<MenuItem name="控制台">
 								<Icon type="ios-paper" />
 								控制台
 								</MenuItem>
 							</router-Link>
-							
-							<router-Link to="/index/noticSelect">
-								<MenuItem name="工作安排">
-								<Icon type="ios-people" />
-								工作安排
-								</MenuItem>
-							</router-Link>
-							<router-Link to="/index/workArrangementSelect">
-								<MenuItem name="公告管理">
-								<Icon type="ios-people" />
-								公告管理
-								</MenuItem>
-							</router-Link>
+							<MenuItem >
+							<marquee style="width: 400px;position: absolute;">
+								{{gk}}
+								</marquee>
+							</MenuItem>
+								
 						</Menu>
 					</div>
 					
@@ -138,16 +130,13 @@
 				<Sider hide-trigger :style="{background: '#fff'}">
 					<Menu @on-open-change="fu" @on-select="ze" :accordion="true" active-name="1-2" :theme="theme" width="auto"
 					 :open-names="['1']">
-						<Submenu name="快速接单">
+						<Submenu name="接单管理">
 							<template slot="title">
 								<Icon type="logo-yen" />
-								快速接单
+								接单管理
 							</template>
-							<router-Link to="/index/financialManagementSelect">
-								<MenuItem name="查看货源">查看货源</MenuItem>
-							</router-Link>
-							<router-Link to="/index/financialManagementSelect">
-								<MenuItem name="查看货源详细">查看货源详细</MenuItem>
+							<router-Link to="/czindex/ksjd">
+								<MenuItem name="快速接单">快速接单</MenuItem>
 							</router-Link>
 						</Submenu>
 						<Submenu name="订单管理">
@@ -155,17 +144,14 @@
 								<Icon type="md-done-all"></Icon>
 								订单管理
 							</template>
-							<router-Link to="/index/attendanceSelect">
-								<MenuItem name="待发货订单">待发货订单</MenuItem>
+							<router-Link to="/czindex/ddglSelect">
+								<MenuItem name="全部订单">全部订单</MenuItem>
 							</router-Link>
-							<router-Link to="/index/attendanceSelect">
+							<router-Link to="/czindex/ddglSelectysz">
 								<MenuItem name="运输中订单">运输中订单</MenuItem>
 							</router-Link>
-							<router-Link to="/index/attendanceSelect">
+							<router-Link to="/czindex/ddglSelectywc">
 								<MenuItem name="已完成订单">已完成订单</MenuItem>
-							</router-Link>
-							<router-Link to="/index/attendanceSelect">
-								<MenuItem name="全部订单">全部订单</MenuItem>
 							</router-Link>
 						</Submenu>
 						<Submenu name="个人资料">
@@ -173,16 +159,13 @@
 								<Icon type="ios-ribbon" />
 								个人资料
 							</template>
-							<router-Link to="/index/departmentalExcellenceRecordSelect">
+							<router-Link to="/czindex/wdxx">
 								<MenuItem name="我的信息">我的信息</MenuItem>
 							</router-Link>
-							<router-Link to="/index/departmentalExcellenceRecordSelect">
-								<MenuItem name="实名认证">实名认证</MenuItem>
+							<router-Link to="/czindex/wdcl">
+								<MenuItem name="我的车辆">我的车辆</MenuItem>
 							</router-Link>
-							<router-Link to="/index/departmentalExcellenceRecordSelect">
-								<MenuItem name="我的油卡">我的油卡</MenuItem>
-							</router-Link>
-							<router-Link to="/index/departmentalExcellenceRecordSelect">
+							<router-Link to="/czindex/xtsz">
 								<MenuItem name="系统设置">系统设置</MenuItem>
 							</router-Link>
 						</Submenu>
@@ -217,6 +200,7 @@
 				url: "http://47.100.245.30:8080",
 				years: "",
 				mName: "小邦哥1",
+				gk:"长江上海航道处2019年空调和厨房油烟机维保服务采购项目成交公告",
 				theme: "primary",
 				parentTag: "控制台",
 				modal13: false,

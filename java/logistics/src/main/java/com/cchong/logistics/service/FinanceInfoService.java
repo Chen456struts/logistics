@@ -50,4 +50,18 @@ public interface FinanceInfoService {
      * @return
      */
     int count();
+
+    /**
+     * 根据交易类型查询操作
+     *
+     * @return
+     */
+    List<FinanceInfo> selectType(String fName, String fNameType,String fType) ;
+
+    /**
+     * 根据交易类型查询操作
+     * @return
+     */
+    int countType(String fName, String fNameType,String fType) ;
+
 }

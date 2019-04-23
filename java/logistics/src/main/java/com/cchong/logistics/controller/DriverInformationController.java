@@ -113,7 +113,25 @@ public class DriverInformationController {
             if (list == null) {
                 return new Result().successMessage("无数据");
             } else {
-                return new Result(200, "ok", list, driverInformationService.count());
+                return new Result(0, "ok", list, driverInformationService.count());
+            }
+        } catch (Exception ex) {
+            return new Result().error(ex.getMessage());
+        }
+    }
+    /* 模糊查询
+     *
+     * @return
+     */
+    @GetMapping("/selectVague")
+    public Result selectVague(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int limit,String dName, String dPhone, String dSex) {
+        try {
+            PageHelper.startPage(page, limit);
+            List<DriverInformation> list = driverInformationService.selectVague(dName,dPhone,dSex);
+            if (list == null) {
+                return new Result().successMessage("无数据");
+            } else {
+                return new Result(0, "ok", list, driverInformationService.countVague(dName,dPhone,dSex));
             }
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());

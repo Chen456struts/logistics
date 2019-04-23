@@ -76,4 +76,9 @@ public class NoticeServiceImpl implements NoticeService {
     public int count() {
         return noticeMapper.count();
     }
+
+    @Override
+    public String selectDirection(String direction) {
+        return noticeMapper.selectDirection(direction);
+    }
 }

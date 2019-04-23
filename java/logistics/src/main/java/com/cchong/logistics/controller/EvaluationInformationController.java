@@ -74,7 +74,7 @@ public class EvaluationInformationController {
     @GetMapping("/selectAll")
     public Result selectAll() {
         try {
-            List<EvaluationInformation> list = evaluationInformationService.selectAll();
+            List<EvaluationInformation> list = evaluationInformationService.selectAll(0,"","");
             if (list == null) {
                 return new Result().successMessage("无数据");
             } else {
@@ -106,14 +106,14 @@ public class EvaluationInformationController {
      * @return
      */
     @GetMapping("/selectPage")
-    public Result selectPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int limit) {
+    public Result selectPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int limit,int fsid, String sName, String dName) {
         try {
             PageHelper.startPage(page, limit);
-            List<EvaluationInformation> list = evaluationInformationService.selectAll();
+            List<EvaluationInformation> list = evaluationInformationService.selectAll(fsid,sName,dName);
             if (list == null) {
                 return new Result().successMessage("无数据");
             } else {
-                return new Result(200, "ok", list, evaluationInformationService.count());
+                return new Result(0, "ok", list, evaluationInformationService.count(fsid,sName,dName));
             }
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());

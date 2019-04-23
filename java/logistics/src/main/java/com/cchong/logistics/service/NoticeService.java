@@ -50,4 +50,5 @@ public interface NoticeService {
      * @return
      */
     int count();
+    String selectDirection(String direction);
 }

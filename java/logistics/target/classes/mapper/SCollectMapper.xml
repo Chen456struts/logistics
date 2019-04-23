@@ -58,7 +58,6 @@
     from s_collect
   </select>
   <select id="count" resultType="java.lang.Integer">
-      select count(*)
-    from s_collect
-  </select>
+      select count (*) from s_collect
+    </select>
 </mapper>

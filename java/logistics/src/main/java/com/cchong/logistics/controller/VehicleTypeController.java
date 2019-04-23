@@ -74,7 +74,7 @@ public class VehicleTypeController {
     @GetMapping("/selectAll")
     public Result selectAll() {
         try {
-            List<VehicleType> list = vehicleTypeService.selectAll();
+            List<VehicleType> list = vehicleTypeService.selectAll("");
             if (list == null) {
                 return new Result().successMessage("无数据");
             } else {
@@ -106,14 +106,31 @@ public class VehicleTypeController {
      * @return
      */
     @GetMapping("/selectPage")
-    public Result selectPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int limit) {
+    public Result selectPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int limit,String vName) {
         try {
             PageHelper.startPage(page, limit);
-            List<VehicleType> list = vehicleTypeService.selectAll();
+            List<VehicleType> list = vehicleTypeService.selectAll(vName);
             if (list == null) {
                 return new Result().successMessage("无数据");
             } else {
-                return new Result(200, "ok", list, vehicleTypeService.count());
+                return new Result(0, "ok", list, vehicleTypeService.count(vName));
+            }
+        } catch (Exception ex) {
+            return new Result().error(ex.getMessage());
+        }
+    }
+    /* 查询所有数据分页
+     *
+     * @return
+     */
+    @GetMapping("/selectGroup")
+    public Result selectGroup() {
+        try {
+            List<VehicleType> list = vehicleTypeService.selectGroup();
+            if (list == null) {
+                return new Result().successMessage("无数据");
+            } else {
+                return new Result(0, "ok", list);
             }
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());

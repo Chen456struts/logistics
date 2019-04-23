@@ -37,7 +37,7 @@ public interface NoticeMapper {
      * @return
      */
     List<Notice> selectAll();
-
+    String selectDirection(String direction);
     /**
      * 根据主键全部修改操作
      *

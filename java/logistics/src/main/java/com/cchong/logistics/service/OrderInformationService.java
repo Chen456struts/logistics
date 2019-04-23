@@ -1,6 +1,7 @@
 package com.cchong.logistics.service;
 
 import com.cchong.logistics.entity.OrderInformation;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface OrderInformationService {
      * @param id
      * @return
      */
-    int deleteByPrimaryKey(int id);
+    int deleteByPrimaryKey(String id);
 
     /**
      * 添加操作
@@ -29,7 +30,7 @@ public interface OrderInformationService {
      * @return
      */
     OrderInformation selectByPrimaryKey(int id);
-
+    int countType(String type,int sId, int dId);
     /**
      * 全部查询操作
      *
@@ -50,4 +51,9 @@ public interface OrderInformationService {
      * @return
      */
     int count();
+
+    //根据订单状态查询
+    List<OrderInformation> selectStart(String oState, String oId, String contacts);
+
+    int countStart(String oState, String oId, String contacts);
 }

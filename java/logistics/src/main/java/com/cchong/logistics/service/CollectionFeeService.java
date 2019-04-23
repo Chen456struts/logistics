@@ -35,7 +35,7 @@ public interface CollectionFeeService {
      *
      * @return
      */
-    List<CollectionFee> selectAll();
+    List<CollectionFee> selectAll(String cType);
 
     /**
      * 修改操作
@@ -49,5 +49,5 @@ public interface CollectionFeeService {
      * 查询所有数据
      * @return
      */
-    int count();
+    int count(String cType);
 }

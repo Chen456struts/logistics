@@ -36,7 +36,7 @@ public interface VehicleTypeMapper {
      *
      * @return
      */
-    List<VehicleType> selectAll();
+    List<VehicleType> selectAll(String vName);
 
     /**
      * 根据主键全部修改操作
@@ -50,5 +50,6 @@ public interface VehicleTypeMapper {
      * 查询所有数据
      * @return
      */
-    int count();
+    int count(String vName);
+    List<VehicleType> selectGroup();
 }

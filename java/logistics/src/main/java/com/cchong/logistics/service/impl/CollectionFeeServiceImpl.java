@@ -53,8 +53,8 @@ public class CollectionFeeServiceImpl implements CollectionFeeService {
      * @return
      */
     @Override
-    public List<CollectionFee> selectAll() {
-        return collectionFeeMapper.selectAll();
+    public List<CollectionFee> selectAll(String cType) {
+        return collectionFeeMapper.selectAll(cType);
     }
 
     /**
@@ -73,7 +73,7 @@ public class CollectionFeeServiceImpl implements CollectionFeeService {
      * @return
      */
     @Override
-    public int count() {
-        return collectionFeeMapper.count();
+    public int count(String cType) {
+        return collectionFeeMapper.count(cType);
     }
 }

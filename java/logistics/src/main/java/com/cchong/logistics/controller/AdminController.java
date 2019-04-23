@@ -113,7 +113,7 @@ public class AdminController {
             if (list == null) {
                 return new Result().successMessage("无数据");
             } else {
-                return new Result(200, "ok", list, adminService.count());
+                return new Result(0, "ok", list, adminService.count());
             }
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());

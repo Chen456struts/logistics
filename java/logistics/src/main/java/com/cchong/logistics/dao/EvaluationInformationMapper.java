@@ -1,6 +1,7 @@
 package com.cchong.logistics.dao;
 
 import com.cchong.logistics.entity.EvaluationInformation;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -36,7 +37,7 @@ public interface EvaluationInformationMapper {
      *
      * @return
      */
-    List<EvaluationInformation> selectAll();
+    List<EvaluationInformation> selectAll(@Param("fsid") int fsid,@Param("sName")  String sName,@Param("dName")  String dName);
 
     /**
      * 根据主键全部修改操作
@@ -50,5 +51,5 @@ public interface EvaluationInformationMapper {
      * 查询所有数据
      * @return
      */
-    int count();
+    int count(@Param("fsid") int fsid,@Param("sName")  String sName,@Param("dName")  String dName);
 }

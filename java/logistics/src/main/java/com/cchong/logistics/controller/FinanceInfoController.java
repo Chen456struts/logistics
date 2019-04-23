@@ -106,14 +106,32 @@ public class FinanceInfoController {
      * @return
      */
     @GetMapping("/selectPage")
-    public Result selectPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int limit) {
+    public Result selectPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int limit){
         try {
             PageHelper.startPage(page, limit);
             List<FinanceInfo> list = financeInfoService.selectAll();
             if (list == null) {
                 return new Result().successMessage("无数据");
             } else {
-                return new Result(200, "ok", list, financeInfoService.count());
+                return new Result(0, "ok", list, financeInfoService.count());
+            }
+        } catch (Exception ex) {
+            return new Result().error(ex.getMessage());
+        }
+    }
+    /* 根据类型查询
+     *
+     * @return
+     */
+    @GetMapping("/selectType")
+    public Result selectType(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int limit,String fName,String fNameType,String fType) {
+        try {
+            PageHelper.startPage(page, limit);
+            List<FinanceInfo> list = financeInfoService.selectType(fName,fNameType,fType);
+            if (list == null) {
+                return new Result().successMessage("无数据");
+            } else {
+                return new Result(0, "ok", list, financeInfoService.countType(fName,fNameType,fType));
             }
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());

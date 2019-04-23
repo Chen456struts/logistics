@@ -1,6 +1,7 @@
 package com.cchong.logistics.dao;
 
 import com.cchong.logistics.entity.FinanceInfo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -51,4 +52,18 @@ public interface FinanceInfoMapper {
      * @return
      */
     int count();
+
+
+    /**
+     * 根据交易类型查询操作
+     *
+     * @return
+     */
+    List<FinanceInfo> selectType(@Param("fName") String fName,@Param("fNameType") String fNameType,@Param("fType") String fType);
+
+    /**
+     * 根据交易类型查询操作
+     * @return
+     */
+    int countType(@Param("fName") String fName,@Param("fNameType") String fNameType,@Param("fType") String fType);
 }

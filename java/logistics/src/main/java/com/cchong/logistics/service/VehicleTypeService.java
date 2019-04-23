@@ -35,7 +35,7 @@ public interface VehicleTypeService {
      *
      * @return
      */
-    List<VehicleType> selectAll();
+    List<VehicleType> selectAll(String vName);
 
     /**
      * 修改操作
@@ -49,5 +49,6 @@ public interface VehicleTypeService {
      * 查询所有数据
      * @return
      */
-    int count();
+    int count(String vName);
+    List<VehicleType> selectGroup();
 }

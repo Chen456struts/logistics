@@ -1,6 +1,7 @@
 package com.cchong.logistics.dao;
 
 import com.cchong.logistics.entity.DriverInformation;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -51,4 +52,8 @@ public interface DriverInformationMapper {
      * @return
      */
     int count();
+
+    List<DriverInformation> selectVague(@Param("dName") String dName,@Param("dPhone") String dPhone,@Param("dSex") String dSex );
+
+    int countVague(@Param("dName") String dName,@Param("dPhone") String dPhone,@Param("dSex") String dSex );
 }

@@ -72,7 +72,7 @@ public class NoticeController {
      * @return
      */
     @GetMapping("/selectAll")
-    public Result selectAll() {
+    public Result selectAll(String type) {
         try {
             List<Notice> list = noticeService.selectAll();
             if (list == null) {
@@ -113,8 +113,18 @@ public class NoticeController {
             if (list == null) {
                 return new Result().successMessage("无数据");
             } else {
-                return new Result(200, "ok", list, noticeService.count());
+                return new Result(0, "ok", list, noticeService.count());
             }
+        } catch (Exception ex) {
+            return new Result().error(ex.getMessage());
+        }
+    }
+
+    @GetMapping("/selectDirection")
+    public Result selectDirection(String direction) {
+        try {
+            String list = noticeService.selectDirection(direction);
+            return new Result(0, "ok", list, 0);
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());
         }

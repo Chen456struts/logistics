@@ -1,6 +1,7 @@
 package com.cchong.logistics.service;
 
 import com.cchong.logistics.entity.ShipperInformation;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -35,7 +36,7 @@ public interface ShipperInformationService {
      *
      * @return
      */
-    List<ShipperInformation> selectAll();
+    List<ShipperInformation> selectAll(@Param("sName") String sName, @Param("dPhone") String sPhone, @Param("sSex") String sSex );
 
     /**
      * 修改操作
@@ -49,5 +50,5 @@ public interface ShipperInformationService {
      * 查询所有数据
      * @return
      */
-    int count();
+    public int count(@Param("sName") String sName, @Param("dPhone") String sPhone, @Param("sSex") String sSex );
 }

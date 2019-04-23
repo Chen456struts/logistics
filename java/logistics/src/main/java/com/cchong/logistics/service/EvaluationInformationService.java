@@ -35,7 +35,7 @@ public interface EvaluationInformationService {
      *
      * @return
      */
-    List<EvaluationInformation> selectAll();
+    List<EvaluationInformation> selectAll(int fsid, String sName, String dName);
 
     /**
      * 修改操作
@@ -49,5 +49,5 @@ public interface EvaluationInformationService {
      * 查询所有数据
      * @return
      */
-    int count();
+    int count(int fsid, String sName, String dName);
 }

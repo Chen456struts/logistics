@@ -74,7 +74,7 @@ public class CollectionFeeController {
     @GetMapping("/selectAll")
     public Result selectAll() {
         try {
-            List<CollectionFee> list = collectionFeeService.selectAll();
+            List<CollectionFee> list = collectionFeeService.selectAll("");
             if (list == null) {
                 return new Result().successMessage("无数据");
             } else {
@@ -106,14 +106,14 @@ public class CollectionFeeController {
      * @return
      */
     @GetMapping("/selectPage")
-    public Result selectPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int limit) {
+    public Result selectPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int limit,String cType) {
         try {
             PageHelper.startPage(page, limit);
-            List<CollectionFee> list = collectionFeeService.selectAll();
+            List<CollectionFee> list = collectionFeeService.selectAll(cType);
             if (list == null) {
                 return new Result().successMessage("无数据");
             } else {
-                return new Result(200, "ok", list, collectionFeeService.count());
+                return new Result(0, "ok", list, collectionFeeService.count(cType));
             }
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());

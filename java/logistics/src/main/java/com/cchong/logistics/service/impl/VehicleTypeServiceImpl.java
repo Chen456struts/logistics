@@ -53,8 +53,8 @@ public class VehicleTypeServiceImpl implements VehicleTypeService {
      * @return
      */
     @Override
-    public List<VehicleType> selectAll() {
-        return vehicleTypeMapper.selectAll();
+    public List<VehicleType> selectAll(String vName) {
+        return vehicleTypeMapper.selectAll(vName);
     }
 
     /**
@@ -73,7 +73,12 @@ public class VehicleTypeServiceImpl implements VehicleTypeService {
      * @return
      */
     @Override
-    public int count() {
-        return vehicleTypeMapper.count();
+    public int count(String vName) {
+        return vehicleTypeMapper.count(vName);
+    }
+
+    @Override
+    public List<VehicleType> selectGroup() {
+        return vehicleTypeMapper.selectGroup();
     }
 }
