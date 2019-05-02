@@ -47,105 +47,6 @@
 			</div>
 		</div>
 
-	<Modal v-model="modal14" :loading="modal14loading" fullscreen  :title="title" @on-ok="addok">
-			<Form ref="formValidate" :model="orderInformation" :label-width="80">
-				<Row>
-					<Col span="8">
-					<FormItem label="订单编号" prop="oId">
-						<Input v-model="orderInformation.oId" :maxlength=18 placeholder="自动录入"></Input>
-					</FormItem>
-					</Col>
-					<Col span="8">
-					<FormItem label="车辆类型" prop="oType" >
-						<Select v-model="orderInformation.oType"   filterable>
-						<Option v-for="item in vehicleType" :value="item.tId" :key="item.vName">{{ item.vName }}</Option>
-					</Select>
-					</FormItem>
-					</Col>
-					<Col span="8">
-					<FormItem label="联系人电话" prop="contacts">
-						<Input v-model="orderInformation.contacts" :maxlength=18 placeholder="请输入联系人电话"></Input>
-					</FormItem>
-					</Col>
-				</Row>
-				<Row>
-						<Col span="8">
-						<FormItem label="发货地址"  prop="shippingAddress">
-							<Input  v-model="orderInformation.shippingAddress"  placeholder="请输入发货地址"></Input>
-						</FormItem>
-						</Col>
-						<Col span="8">
-						<FormItem label="收货地址" prop="receivingAddress">
-							<Input  v-model="orderInformation.receivingAddress"  placeholder="请输入收货地址"></Input>
-						</FormItem>
-						</Col>
-					<Col span="8">
-					<FormItem label="订单价格" prop="price">
-						<Input v-model="orderInformation.price" :maxlength=18 placeholder="请输入订单价格"></Input>
-					</FormItem>
-					</Col>
-				</Row>
-				<Row>
-					<Col span="8">
-					<FormItem label="运输车牌号" prop="dId">
-						<Select v-model="orderInformation.dId"   filterable>
-							<Option v-for="item in vehicle" :value="item.iId" :key="item.iId">{{ item.license }}</Option>
-						</Select>
-					</FormItem>
-					</Col>
-					<Col span="8">
-					<FormItem label="货主名字" prop="sId">
-						<Select v-model="orderInformation.sId"  filterable>
-								<Option v-for="item in shipperInformation" :value="item.sId" :key="item.sId">{{ item.sName }}</Option>
-							</Select>
-					</FormItem>
-					</Col>
-					<Col span="8">
-					<FormItem label="评价id" prop="eId">
-						<Input v-model="orderInformation.eId" :maxlength=18 placeholder="请输入订单状态"></Input>
-					</FormItem>
-					</Col>
-				</Row>
-				
-				<Row>
-					<Col span="8">
-					<FormItem label="预约时间">
-						<DatePicker type="date" placeholder="预约时间" @on-change="getStartTime" v-model="orderInformation.startDate"></DatePicker>
-					</FormItem>
-					</Col>
-					<Col span="8">
-					<FormItem label="完成时间">
-						<DatePicker type="date" placeholder="请选择完成时间" @on-change="getStartTimeend" v-model="orderInformation.endDate"></DatePicker>
-					</FormItem>
-					</Col>
-					<Col span="8">
-					<FormItem label="状态">
-						<RadioGroup v-model="orderInformation.oState">
-							<Radio label="待运输">
-								<Icon type="ios-eye" />
-								<span>待运输</span>
-							</Radio>
-							<Radio label="运输中">
-								<Icon type="ios-eye-off" />
-								<span>运输中</span>
-							</Radio>
-							<Radio label="已完成">
-								<Icon type="ios-football-outline" />
-								<span>已完成</span>
-							</Radio>
-						</RadioGroup>
-					</FormItem>
-					</Col>
-				</Row>
-				<Row>
-					<Col span="24">
-					<FormItem label="订单备注" prop="sId">
-						<Input v-model="orderInformation.oRemarks" type="textarea" :autosize="{minRows: 3,maxRows: 5}" placeholder="备注"></Input>
-					</FormItem>
-					</Col>
-				</Row>
-			</Form>
-		</Modal>
 	</div>
 </template>
 <script>
@@ -337,7 +238,8 @@
 						page: page,
 						oId:th.orderInformation.oId,
 						oStart:'运输中',
-						contacts:th.orderInformation.contacts
+						contacts:th.orderInformation.contacts,
+						sId:localStorage.getItem("mUser")
 					}
 				}).then(function(res) {
 					th.data6 = res.data.data;

@@ -1,6 +1,7 @@
 package com.cchong.logistics.dao;
 
 import com.cchong.logistics.entity.Admin;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -51,4 +52,19 @@ public interface AdminMapper {
      * @return
      */
     int count();
+    /**
+     * 根据手机号码获取信息
+     * @param phone
+     * @return
+     */
+    Admin yzm(@Param("phone") String phone);
+    //修改密码
+    int updatePassword(@Param("password") String password, @Param("aId") int aId);
+    /**
+     * 根据手机号码获取信息
+     * @param phone
+     * @return
+     */
+    Admin yzms(@Param("phone") String phone);
+
 }

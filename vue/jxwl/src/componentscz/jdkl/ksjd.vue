@@ -11,7 +11,7 @@
 				<FormItem>
 					<Row>
 						<Col span="8" style="text-align: center;">
-						<Checkbox v-model="ddbhs" >订单编号</Checkbox>
+						<Checkbox v-model="ddbhs">订单编号</Checkbox>
 						</Col>
 						<Col span="16">
 						<Input height="20" v-model="orderInformation.oId" placeholder="模糊查询订单编号"></Input>
@@ -49,13 +49,13 @@
 			return {
 				modal14: false,
 				loading: true,
-				vehicleType:"",
-				vehicle:"",
-				ddbhs:false,
-				lxhms:false,
+				vehicleType: "",
+				vehicle: "",
+				ddbhs: false,
+				lxhms: false,
 				url: "http://localhost:8080",
 				count: 10,
-				shipperInformation:"",
+				shipperInformation: "",
 				columns7: [{
 						title: '订单编号',
 						key: 'oId',
@@ -92,7 +92,7 @@
 						key: 'receivingAddress',
 						tooltip: true,
 						align: 'center'
-					},{
+					}, {
 						title: '货主编号',
 						key: 'sId',
 						tooltip: true,
@@ -102,7 +102,7 @@
 						key: 'oState',
 						tooltip: true,
 						align: 'center'
-					},{
+					}, {
 						title: '操作',
 						key: 'action',
 						width: 150,
@@ -119,7 +119,7 @@
 									},
 									on: {
 										click: () => {
-											this.add(params.row.shippingAddress,params.row.receivingAddress);
+											this.add(params.row.oId,params.row.shippingAddress, params.row.receivingAddress);
 										}
 									}
 								}, '接单导航')
@@ -128,20 +128,20 @@
 					}
 				],
 				data6: [],
-				orderInformation:{
-					oId:0,
-					oType:"",
-					contacts:"",
-					oRemarks:"",
-					startDate:"",
-					endDate:"",
-					price:"",
-					shippingAddress:"",
-					receivingAddress:"",
-					sId:0,
-					dId:0,
-					oState:"待运输",
-					eId:0,
+				orderInformation: {
+					oId: 0,
+					oType: "",
+					contacts: "",
+					oRemarks: "",
+					startDate: "",
+					endDate: "",
+					price: "",
+					shippingAddress: "",
+					receivingAddress: "",
+					sId: 0,
+					dId: 0,
+					oState: "待运输",
+					eId: 0,
 				}
 			}
 		},
@@ -149,55 +149,70 @@
 			//查询
 			changePage(page) {
 				const th = this;
-				if(!th.ddbhs){
+				if (!th.ddbhs) {
 					th.orderInformation.oId = '';
 				}
-				if(!th.lxhms){
+				if (!th.lxhms) {
 					th.orderInformation.contacts = '';
 				}
 				axios.get(th.url + '/orderInformation/selectStart', {
 					params: {
 						page: page,
-						oId:th.orderInformation.oId,
-						oStart:'待运输',
-						contacts:th.orderInformation.contacts
+						oId: th.orderInformation.oId,
+						oStart: '待运输',
+						contacts: th.orderInformation.contacts
 					}
 				}).then(function(res) {
 					th.data6 = res.data.data;
 					th.count = res.data.count;
 				})
 				th.loading = false;
-			},add(start,end) {
+			},
+			add(oId,start, end) {
 				var th = this;
 				this.loading = true;
-				th.$Message.success("接单成功，调转导航！");
-				var map = new AMap.Map("container", {
-					resizeEnable: true,
-					zoom: 20 //这里设置没有用，create()函数里面new maker时会把zoom改成默认值
-				})
-				AMap.plugin(["AMap.Driving"], function() {
-					var drivingOption = {
-						policy: AMap.DrivingPolicy.LEAST_TIME,
-						map: map
-					};
-					var driving = new AMap.Driving(drivingOption); //构造驾车导航类
-					//根据起终点坐标规划驾车路线
-					driving.search([{
-						keyword: start
-					}, {
-						keyword: end
-					}], function(status, result) {
-						th.loading = false;
-						driving.searchOnAMAP({
-							origin: result.origin,
-							destination: result.destination
-						});
+				axios.get(th.url + '/orderInformation/updateSet', {
+					params: {
+						oId: oId,
+						dId: localStorage.getItem("mUser"),
+						oState: "运输中"
+					}
+				}).then(function(res) {
+					if (res.data.code === 200) {
+						th.$Message.success("接单成功，正在调转导航！");
+						th.changePage(1);
+						var map = new AMap.Map("container", {
+							resizeEnable: true,
+							zoom: 20 //这里设置没有用，create()函数里面new maker时会把zoom改成默认值
+						})
+						AMap.plugin(["AMap.Driving"], function() {
+							var drivingOption = {
+								policy: AMap.DrivingPolicy.LEAST_TIME,
+								map: map
+							};
+							var driving = new AMap.Driving(drivingOption); //构造驾车导航类
+							//根据起终点坐标规划驾车路线
+							driving.search([{
+								keyword: start
+							}, {
+								keyword: end
+							}], function(status, result) {
+								th.loading = false;
+								driving.searchOnAMAP({
+									origin: result.origin,
+									destination: result.destination
+								});
 						
-					});
-
-				});
-				map.addControl(new AMap.ToolBar());
-
+							});
+						
+						});
+						map.addControl(new AMap.ToolBar());
+						}else{
+							th.loading = false;
+							th.changePage(1);
+							th.$Message.error("接单失败！");
+						}
+				})
 			}
 		},
 		created() {

@@ -99,6 +99,9 @@
 						<span style="color: #f5a623">{{ evaluationInformation.fraction }}</span>
 					</Rate>
 				</FormItem>
+				<FormItem label="订单编号" prop="fraction">
+					<Input v-model="evaluationInformation.oId" placeholder="请输入订单编号"></Input>
+				</FormItem>
 				<FormItem label="评价内容" prop="eContent">
 					<Input v-model="evaluationInformation.eContent" type="textarea" :autosize="{minRows: 6,maxRows: 8}" placeholder="内容"></Input>
 				</FormItem>
@@ -147,6 +150,7 @@
 				evaluationInformation: {
 					eId: 0,
 					dId: 0,
+					oId: 0,
 					sId: 0,
 					fraction: 5,
 					eContent: "",
@@ -175,6 +179,10 @@
 						key: 'fraction',
 						align: 'center',
 					}, {
+						title: '订单编号',
+						key: 'oId',
+						align: 'center',
+					},{
 						title: '评价内容',
 						key: 'eContent',
 						tooltip: true,
@@ -250,15 +258,19 @@
 			add() {
 				this.title = "添加评价信息";
 				this.evaluationInformation.fraction = 5;
+				this.evaluationInformation.eId = 0;
+				this.evaluationInformation.dId = 0;
+				this.evaluationInformation.oId = 0;
+				this.evaluationInformation.sId = 0;
 				this.evaluationInformation.eContent = "";
 				this.modal14 = true;
 			},
 			//单击编辑
 			show(data) {
 				this.title = '编辑评价信息'
-				console.log(data);
 				this.evaluationInformation.eId = data.eId;
 				this.evaluationInformation.dId = data.dId;
+				this.evaluationInformation.oId = data.oId;
 				this.evaluationInformation.sId = data.sId;
 				this.evaluationInformation.fraction = data.fraction;
 				this.evaluationInformation.eContent = data.eContent;

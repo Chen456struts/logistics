@@ -1,8 +1,9 @@
 package com.cchong.logistics.controller;
+import com.cchong.logistics.dao.VehicleMapper;
 import com.cchong.logistics.entity.Vehicle;
 import com.cchong.logistics.service.VehicleService;
 import com.cchong.logistics.util.Result;
-import org.apache.ibatis.annotations.Param;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -13,7 +14,8 @@ import com.github.pagehelper.PageHelper;
 public class VehicleController {
     @Autowired
     private VehicleService vehicleService;
-
+    @Autowired
+    private VehicleMapper vehicleMapper;
     /**
      * 根据主键删除
      * 要求转入 aId
@@ -22,6 +24,7 @@ public class VehicleController {
      * @return
      */
     @GetMapping("/deleteByPrimaryKey")
+    @RequiresRoles("admin")
     public Result deleteByPrimaryKey(int id) {
         try {
 
@@ -44,7 +47,6 @@ public class VehicleController {
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());
         }
-
     }
 
     /**
@@ -67,6 +69,25 @@ public class VehicleController {
         }
     }
 
+    /**
+     * 根据主键查找对象  最多只能返回一个对象
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping("/selectById")
+    public Result selectById(int id) {
+        try {
+            Vehicle vehicle1 = vehicleMapper.selectdId(id);
+            if (vehicle1 == null) {
+                return new Result().error("无数据");
+            } else {
+                return new Result().success(vehicle1);
+            }
+        } catch (Exception ex) {
+            return new Result().error(ex.getMessage());
+        }
+    }
     /**
      * 查询所有数据
      *

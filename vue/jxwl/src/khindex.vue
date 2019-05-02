@@ -166,9 +166,6 @@
 							<router-Link to="/grzl/wdxx">
 								<MenuItem name="我的信息">我的信息</MenuItem>
 							</router-Link>
-							<router-Link to="/grzl/xtsz">
-								<MenuItem name="系统设置">系统设置</MenuItem>
-							</router-Link>
 						</Submenu>
 					</Menu>
 				</Sider>
@@ -215,49 +212,49 @@
 		},
 		methods: {
 			logout() {
-				window.location.href = "/";
-				/* var th = this;
+				var th = this;
 				axios.get(th.url + '/login/logout').then(function(res) {
-					if (res.data.code == 1028) {
 						th.$Message.success(res.data.message);
 						localStorage.setItem("accessToken", null);
 						setTimeout(function() {
 							window.location.href = "/";
 						}, 900);
-
-					}
-				}); */
+				}); 
 
 			},
 			ok() {
 				var th = this;
-				if (th.user.password.length < 6) {
-					th.$Message.warning("密码最少为6位");
-					return;
-				}
 				if (th.user.passwords != th.user.passwordss) {
 					th.$Message.warning("两次密码不一致");
+					th.modal13show();
 					return;
 				}
 				th.user.mUser = localStorage.getItem("mUser");
-				axios.get(th.url + '/memberInformation/upassword', {
+				axios.get(th.url + '/shipperInformation/updatePassword', {
 					params: {
-						mUser: th.user.mUser,
-						password: th.user.password,
-						passwords: th.user.passwords
+						id: th.user.mUser,
+						old: th.user.password,
+						password: th.user.passwords
 					}
 				}).then(function(res) {
-					if (res.data.code == 1028) {
+					if (res.data.code == 200) {
 						th.$Message.success(res.data.message);
 						localStorage.setItem("accessToken", null);
 						axios.get(th.url + '/login/logout');
 						setTimeout(function() {
-							window.location.href = "/";
+							window.location.href = "/adminindex";
 						}, 500);
 					} else {
+						th.modal13show();
 						th.$Message.error(res.data.message);
 					}
 				})
+			},
+			modal13show() {
+				this.modal13 = false;
+				setTimeout(() => {
+					this.modal13 = true;
+				}, 1000);
 			},
 			updatepassword() {
 				this.modal13 = true;

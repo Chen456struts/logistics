@@ -105,11 +105,6 @@
 							</Select>
 					</FormItem>
 					</Col>
-					<Col span="8">
-					<FormItem label="评价id" prop="eId">
-						<Input v-model="orderInformation.eId" :maxlength=18 placeholder="请输入订单状态"></Input>
-					</FormItem>
-					</Col>
 				</Row>
 				
 				<Row>
@@ -270,7 +265,6 @@
 					sId:0,
 					dId:0,
 					oState:"待运输",
-					eId:0,
 				}
 			}
 		},
@@ -292,7 +286,7 @@
 			addok(){
 				const th = this;
 				var urls = "insert";
-				if (this.title == "编辑车辆类型") {
+				if (this.title == "编辑订单") {
 					urls = "updateByPrimaryKey";
 				}
 				axios.post(th.url + '/orderInformation/' + urls, th.orderInformation, {
@@ -326,7 +320,6 @@
 				this.orderInformation.sId=data.sId;
 				this.orderInformation.dId=data.dId;
 				this.orderInformation.oState=data.oState;
-				this.orderInformation.eId=data.eId;
 				this.modal14 = true;
 			},
 			modal14show() {

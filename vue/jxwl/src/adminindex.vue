@@ -50,7 +50,7 @@
 							<div class="layout-logo" style="left:0;top:0;width: 200px;;text-align: center;padding-left: 6px;">
 								<router-Link to="/adminindex/">
 									<MenuItem name="控制台">
-									<h3>锦轩物流管理系统</h3>
+									<h3>锦轩物流后台管理系统</h3>
 									</MenuItem>
 								</router-Link>
 							</div>
@@ -60,12 +60,11 @@
 								控制台
 								</MenuItem>
 							</router-Link>
-							<MenuItem >
+							<MenuItem>
 							<marquee style="width: 400px;position: absolute;">
 								{{gk}}
-								</marquee>
+							</marquee>
 							</MenuItem>
-								
 						</Menu>
 					</div>
 					<div class="layout-nav">
@@ -244,7 +243,7 @@
 	export default {
 		data() {
 			return {
-				url: "http://47.100.245.30:8080",
+				url: "http://localhost:8080",
 				years: "",
 				mName: "小邦哥1",
 				theme: "primary",
@@ -261,37 +260,47 @@
 		},
 		methods: {
 			logout() {
+				var th = this;
+				axios.get(th.url + '/login/logout').then(function(res) {
+						th.$Message.success(res.data.message);
+						localStorage.setItem("accessToken", null);
+						setTimeout(function() {
 							window.location.href = "/";
+						}, 900);
+				});
 			},
 			ok() {
 				var th = this;
-				if (th.user.password.length < 6) {
-					th.$Message.warning("密码最少为6位");
-					return;
-				}
 				if (th.user.passwords != th.user.passwordss) {
 					th.$Message.warning("两次密码不一致");
+					th.modal13show();
 					return;
 				}
 				th.user.mUser = localStorage.getItem("mUser");
-				axios.get(th.url + '/memberInformation/upassword', {
+				axios.get(th.url + '/admin/updatePassword', {
 					params: {
-						mUser: th.user.mUser,
-						password: th.user.password,
-						passwords: th.user.passwords
+						id: th.user.mUser,
+						old: th.user.password,
+						password: th.user.passwords
 					}
 				}).then(function(res) {
-					if (res.data.code == 1028) {
+					if (res.data.code == 200) {
 						th.$Message.success(res.data.message);
 						localStorage.setItem("accessToken", null);
 						axios.get(th.url + '/login/logout');
 						setTimeout(function() {
-							window.location.href = "/";
+							window.location.href = "/adminindex";
 						}, 500);
 					} else {
 						th.$Message.error(res.data.message);
 					}
 				})
+			},
+			modal13show() {
+				this.modal13 = false;
+				setTimeout(() => {
+					this.modal13 = true;
+				}, 1000);
 			},
 			updatepassword() {
 				this.modal13 = true;
@@ -310,6 +319,15 @@
 		},
 		created() {
 			this.mName = localStorage.getItem("mName");
+			var th =this;
+			axios.get(th.url + '/notice/selectDirection', {
+					params: {
+						direction: '管理员'
+					}
+				})
+			.then(function(res) {
+				th.gk = res.data.data;
+			})
 			var data = new Date();
 			this.years = data.getFullYear() + "年" + (data.getMonth() + 1) + "月" + data.getDate() + "日";
 		}

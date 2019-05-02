@@ -23,7 +23,8 @@ public interface DriverInformationMapper {
      * @return
      */
     int insert(DriverInformation driverInformation);
-
+    //修改密码
+    int updatePassword(@Param("password") String password, @Param("dId") int dId);
     /**
      * 根据主键查询操作
      *
@@ -53,7 +54,13 @@ public interface DriverInformationMapper {
      */
     int count();
 
-    List<DriverInformation> selectVague(@Param("dName") String dName,@Param("dPhone") String dPhone,@Param("dSex") String dSex );
+    List<DriverInformation> selectVague(@Param("dName") String dName, @Param("dPhone") String dPhone, @Param("dSex") String dSex);
 
-    int countVague(@Param("dName") String dName,@Param("dPhone") String dPhone,@Param("dSex") String dSex );
+    int countVague(@Param("dName") String dName, @Param("dPhone") String dPhone, @Param("dSex") String dSex);
+    /**
+     * 根据手机号码获取信息
+     * @param phone
+     * @return
+     */
+    DriverInformation yzm(@Param("phone") String phone);
 }

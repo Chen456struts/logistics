@@ -108,7 +108,7 @@ public class Result {
      * @return
      */
     public static Result error(String message) {
-        return new Result(201, message);
+        return new Result(1203, message);
     }
 
     /**
@@ -125,6 +125,22 @@ public class Result {
         return new Result(200, message);
     }
 
+    /**
+     * successMessage
+     * 正常返回，携带消息
+     * code:200
+     *
+     * @param message 消息
+     *                data:null
+     *                count:0
+     * @return
+     */
+    public static Result successMessage(String message, Object data) {
+        return new Result(200, message,data);
+    }
+    public static Result successMessage(int code,String message, Object data) {
+        return new Result(code, message,data);
+    }
     /**
      * success
      * 成功方法 带数据返回

@@ -54,9 +54,12 @@ public interface OrderInformationMapper {
      */
     int count();
     //根据订单状态查询、订单编号、联系人号码查询
-    List<OrderInformation> selectStart(@Param("oState") String oState,@Param("oId") String oId,@Param("contacts") String contacts);
+    List<OrderInformation> selectStart(@Param("oState") String oState,@Param("oId") String oId,@Param("contacts") String contacts,@Param("sId") int sId,@Param("dId") int dId);
     //根据订单状态查询、订单编号、联系人号码查询
-    int countStart(@Param("oState") String oState,@Param("oId") String oId,@Param("contacts") String contacts);
+    int countStart(@Param("oState") String oState,@Param("oId") String oId,@Param("contacts") String contacts,@Param("sId") int sId,@Param("dId") int dId);
 
     int countType(@Param("type") String type,@Param("sId") int sId,@Param("dId")  int dId);
+
+    //订单号、司机id、订单状态、完成时间
+    int updateSet(@Param("oId") String oId,@Param("dId") int dId,@Param("oState") String oState,@Param("endDate") int endDate);
 }

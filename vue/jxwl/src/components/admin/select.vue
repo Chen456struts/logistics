@@ -139,7 +139,7 @@
 									on: {
 										click: () => {
 
-											this.remove(params.row.mId, params.index)
+											this.remove(params.row.aId)
 										}
 									}
 								}, '移除')

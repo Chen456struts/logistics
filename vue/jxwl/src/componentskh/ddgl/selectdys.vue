@@ -319,8 +319,8 @@
 			//删除操作
 			remove(id){
 				this.$Modal.confirm({
-					title: '删除提示',
-					content: '<p>移除后不可恢复，确定继续？</p>',
+					title: '取消订单提示',
+					content: '<p>取消订单后不可恢复，确定继续？</p>',
 					onOk: () => {
 						const th = this;
 						axios.get(th.url + '/orderInformation/deleteByPrimaryKey', {
@@ -329,10 +329,10 @@
 							}
 						}).then(function(res) {
 							if (res.data.code === 200) {
-								th.$Message.success(res.data.message);
+								th.$Message.success("取消订单成功！");
 								th.changePage(1);
 							} else {
-								th.$Message.error(res.data.message);
+								th.$Message.error("取消订单失败！");
 							}
 						})
 					}
@@ -358,7 +358,8 @@
 						page: page,
 						oId:th.orderInformation.oId,
 						oStart:'待运输',
-						contacts:th.orderInformation.contacts
+						contacts:th.orderInformation.contacts,
+						sId:localStorage.getItem("mUser")
 					}
 				}).then(function(res) {
 					th.data6 = res.data.data;

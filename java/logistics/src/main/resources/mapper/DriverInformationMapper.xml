@@ -57,6 +57,11 @@
         d_password = #{dPassword,jdbcType=VARCHAR}
         where d_id = #{dId,jdbcType=INTEGER}
     </update>
+    <update id="updatePassword">
+         update driver_information
+         d_password = #{password,jdbcType=VARCHAR}
+        where d_id = #{dId,jdbcType=INTEGER}
+    </update>
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         <!--
           WARNING - @mbg.generated
@@ -104,5 +109,8 @@
                 and d_phone like concat('%',#{dPhone},'%')
             </if>
         </where>
+    </select>
+    <select id="yzm" resultType="com.cchong.logistics.entity.DriverInformation">
+        select * from driver_information where d_phone = #{phone}
     </select>
 </mapper>

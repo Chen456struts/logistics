@@ -31,6 +31,13 @@ public interface EvaluationInformationMapper {
      * @return
      */
     EvaluationInformation selectByPrimaryKey(int id);
+    /**
+     * 根据主键查询操作
+     *
+     * @param oId
+     * @return
+     */
+    EvaluationInformation selectoId(String oId);
 
     /**
      * 全部查询操作

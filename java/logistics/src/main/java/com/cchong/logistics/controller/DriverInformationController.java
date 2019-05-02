@@ -1,7 +1,9 @@
 package com.cchong.logistics.controller;
+import com.cchong.logistics.dao.DriverInformationMapper;
 import com.cchong.logistics.entity.DriverInformation;
 import com.cchong.logistics.service.DriverInformationService;
 import com.cchong.logistics.util.Result;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -12,6 +14,8 @@ import com.github.pagehelper.PageHelper;
 public class DriverInformationController {
     @Autowired
     private DriverInformationService driverInformationService;
+    @Autowired
+    private DriverInformationMapper driverInformationMapper;
 
     /**
      * 根据主键删除
@@ -21,6 +25,7 @@ public class DriverInformationController {
      * @return
      */
     @GetMapping("/deleteByPrimaryKey")
+    @RequiresRoles("admin")
     public Result deleteByPrimaryKey(int id) {
         try {
 
@@ -133,6 +138,26 @@ public class DriverInformationController {
             } else {
                 return new Result(0, "ok", list, driverInformationService.countVague(dName,dPhone,dSex));
             }
+        } catch (Exception ex) {
+            return new Result().error(ex.getMessage());
+        }
+    }
+
+    /* 修改密码
+     *
+     * @return
+     */
+    @GetMapping("/updatePassword")
+    public Result updatePassword(String password,String old, int id) {
+        try {
+            DriverInformation driverInformation = driverInformationService.selectByPrimaryKey(id);
+            if(driverInformation != null){
+                if(driverInformation.getdPassword().equals(old)){
+                    if(driverInformationMapper.updatePassword(password,id)>0)
+                        return new Result(200,"修改成功！");
+                }
+            }
+            return new Result().error("修改失败!");
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());
         }

@@ -36,7 +36,7 @@
 				<Row>
 					<Col span="8">
 					<FormItem label="余额" prop="contacts">
-						<Input v-model="shipperInformation.dBalance" disabled   ></Input>
+						<Input v-model="shipperInformation.sBalance" disabled   ></Input>
 					</FormItem>
 					</Col>
 					<Col span="8">
@@ -60,7 +60,7 @@
 					sUuid: '',
 					sPhone: '',
 					sPassword: '',
-					dBalance: 0,
+					sBalance: 0,
 					registerDate: ''
 				},
 			}
@@ -69,7 +69,15 @@
 			
 		},
 		created() {
-			
+			var th = this;
+			axios.get(th.url + '/shipperInformation/selectByPrimaryKey', {
+				params: {
+					id:localStorage.getItem("mUser")
+				}
+			}).then(function(res) {
+				th.shipperInformation = res.data.data;
+				
+			})
 		}
 	}
 </script>

@@ -33,6 +33,14 @@ public interface VehicleMapper {
     Vehicle selectByPrimaryKey(int id);
 
     /**
+     * 根据主键查询操作
+     *
+     * @param id
+     * @return
+     */
+    Vehicle selectdId(int id);
+
+    /**
      * 全部查询操作
      *
      * @return

@@ -200,11 +200,6 @@
 						tooltip: true,
 						align: 'center'
 					}, {
-						title: '司机编号',
-						key: 'dId',
-						tooltip: true,
-						align: 'center'
-					}, {
 						title: '货主编号',
 						key: 'sId',
 						tooltip: true,
@@ -336,7 +331,8 @@
 					params: {
 						page: page,
 						oId:th.orderInformation.oId,
-						contacts:th.orderInformation.contacts
+						contacts:th.orderInformation.contacts,
+						dId:localStorage.getItem("mUser")
 					}
 				}).then(function(res) {
 					th.data6 = res.data.data;

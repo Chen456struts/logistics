@@ -7,41 +7,41 @@
 			</marquee>
 			</MenuItem>
 		</div>
-			<Form ref="formValidate" :model="shipperInformation" :label-width="80" style="position:relative;left: 110px;">
+			<Form ref="formValidate" :model="driverInformation" :label-width="80" style="position:relative;left: 110px;">
 				<Row>
 					<Col span="8">
 					<FormItem label="编号" prop="contacts">
-						<Input v-model="shipperInformation.sId" disabled  ></Input>
+						<Input v-model="driverInformation.dId" disabled  ></Input>
 					</FormItem>
 					</Col>
 					<Col span="8">
 					<FormItem label="姓名" prop="contacts">
-						<Input v-model="shipperInformation.sName" disabled   ></Input>
+						<Input v-model="driverInformation.dName" disabled   ></Input>
 					</FormItem>
 					</Col>
 				</Row>
 				<Row>
 					<Col span="8">
 					<FormItem label="手机号码" prop="startDate">
-						<Input v-model="shipperInformation.sPhone" disabled   ></Input>
+						<Input v-model="driverInformation.dPhone" disabled   ></Input>
 					</FormItem>
 					</Col>
 			
 					<Col span="8">
 					<FormItem label="身份证" prop="contacts">
-						<Input v-model="shipperInformation.sUuid" disabled   ></Input>
+						<Input v-model="driverInformation.dUuid" disabled   ></Input>
 					</FormItem>
 					</Col>
 				</Row>
 				<Row>
 					<Col span="8">
 					<FormItem label="余额" prop="contacts">
-						<Input v-model="shipperInformation.dBalance" disabled   ></Input>
+						<Input v-model="driverInformation.dBalance" disabled   ></Input>
 					</FormItem>
 					</Col>
 					<Col span="8">
 					<FormItem label="注册时间" prop="startDate">
-						<Input v-model="shipperInformation.registerDate" disabled   ></Input>
+						<Input v-model="driverInformation.registerDate" disabled   ></Input>
 					</FormItem>
 					</Col>
 				</Row>
@@ -53,13 +53,13 @@
 		data() {
 			return {
 				url: "http://localhost:8080",
-				shipperInformation: {
-					sId: 0,
-					sName: '',
-					sSex: '',
-					sUuid: '',
-					sPhone: '',
-					sPassword: '',
+				driverInformation: {
+					dId: 0,
+					dName: '',
+					dSex: '',
+					dUuid: '',
+					dPhone: '',
+					dPassword: '',
 					dBalance: 0,
 					registerDate: ''
 				},
@@ -69,6 +69,14 @@
 			
 		},
 		created() {
+			var th = this;
+			axios.get(th.url + '/driverInformation/selectByPrimaryKey', {
+				params: {
+					id:localStorage.getItem("mUser")
+				}
+			}).then(function(res) {
+				th.driverInformation = res.data.data;
+			})
 			
 		}
 	}

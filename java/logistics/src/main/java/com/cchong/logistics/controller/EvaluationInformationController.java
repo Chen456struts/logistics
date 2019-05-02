@@ -1,7 +1,9 @@
 package com.cchong.logistics.controller;
+import com.cchong.logistics.dao.EvaluationInformationMapper;
 import com.cchong.logistics.entity.EvaluationInformation;
 import com.cchong.logistics.service.EvaluationInformationService;
 import com.cchong.logistics.util.Result;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -12,6 +14,8 @@ import com.github.pagehelper.PageHelper;
 public class EvaluationInformationController {
     @Autowired
     private EvaluationInformationService evaluationInformationService;
+    @Autowired
+    private EvaluationInformationMapper evaluationInformationMapper;
 
     /**
      * 根据主键删除
@@ -21,6 +25,7 @@ public class EvaluationInformationController {
      * @return
      */
     @GetMapping("/deleteByPrimaryKey")
+    @RequiresRoles("admin")
     public Result deleteByPrimaryKey(int id) {
         try {
 
@@ -65,7 +70,25 @@ public class EvaluationInformationController {
             return new Result().error(ex.getMessage());
         }
     }
-
+    /**
+     * 根据主键查找对象  最多只能返回一个对象
+     *
+     * @param oId
+     * @return
+     */
+    @GetMapping("/selectoId")
+    public Result selectoId(String oId) {
+        try {
+            EvaluationInformation evaluationInformation1 = evaluationInformationMapper.selectoId(oId);
+            if (evaluationInformation1 == null) {
+                return new Result().error("无数据");
+            } else {
+                return new Result().success(evaluationInformation1);
+            }
+        } catch (Exception ex) {
+            return new Result().error(ex.getMessage());
+        }
+    }
     /**
      * 查询所有数据
      *

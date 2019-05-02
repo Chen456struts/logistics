@@ -336,7 +336,8 @@
 					params: {
 						page: page,
 						oId:th.orderInformation.oId,
-						contacts:th.orderInformation.contacts
+						contacts:th.orderInformation.contacts,
+						sId:localStorage.getItem("mUser")
 					}
 				}).then(function(res) {
 					th.data6 = res.data.data;

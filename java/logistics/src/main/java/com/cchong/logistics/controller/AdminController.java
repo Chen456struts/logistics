@@ -1,7 +1,9 @@
 package com.cchong.logistics.controller;
+import com.cchong.logistics.dao.AdminMapper;
 import com.cchong.logistics.entity.Admin;
 import com.cchong.logistics.service.AdminService;
 import com.cchong.logistics.util.Result;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -13,6 +15,8 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+    @Autowired
+    private AdminMapper adminMapper;
     /**
      * 根据主键删除
      * 要求转入 aId
@@ -21,9 +25,9 @@ public class AdminController {
      * @return
      */
     @GetMapping("/deleteByPrimaryKey")
+    @RequiresRoles("admin")
     public Result deleteByPrimaryKey(int id) {
         try {
-
             return adminService.deleteByPrimaryKey(id) > 0 ? new Result().successMessage("删除成功") : Result.error("删除失败");
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());
@@ -115,6 +119,26 @@ public class AdminController {
             } else {
                 return new Result(0, "ok", list, adminService.count());
             }
+        } catch (Exception ex) {
+            return new Result().error(ex.getMessage());
+        }
+    }
+
+    /* 修改密码
+     *
+     * @return
+     */
+    @GetMapping("/updatePassword")
+    public Result updatePassword(String password,String old, int id) {
+        try {
+            Admin admin = adminService.selectByPrimaryKey(id);
+            if(admin != null){
+                if(admin.getaPassword().equals(old)){
+                    if(adminMapper.updatePassword(password,id)>0)
+                        return new Result(200,"修改成功！");
+                }
+            }
+            return new Result().error("修改失败!");
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());
         }

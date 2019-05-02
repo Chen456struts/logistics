@@ -1,7 +1,10 @@
 package com.cchong.logistics.controller;
+import com.cchong.logistics.dao.ShipperInformationMapper;
+import com.cchong.logistics.entity.Admin;
 import com.cchong.logistics.entity.ShipperInformation;
 import com.cchong.logistics.service.ShipperInformationService;
 import com.cchong.logistics.util.Result;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -12,7 +15,8 @@ import com.github.pagehelper.PageHelper;
 public class ShipperInformationController {
     @Autowired
     private ShipperInformationService shipperInformationService;
-
+    @Autowired
+    private ShipperInformationMapper shipperInformationMapper;
     /**
      * 根据主键删除
      * 要求转入 aId
@@ -21,6 +25,7 @@ public class ShipperInformationController {
      * @return
      */
     @GetMapping("/deleteByPrimaryKey")
+    @RequiresRoles("admin")
     public Result deleteByPrimaryKey(int id) {
         try {
 
@@ -115,6 +120,27 @@ public class ShipperInformationController {
             } else {
                 return new Result(0, "ok", list, shipperInformationService.count(sName,sPhone,sSex));
             }
+        } catch (Exception ex) {
+            return new Result().error(ex.getMessage());
+        }
+    }
+
+
+    /* 修改密码
+     *
+     * @return
+     */
+    @GetMapping("/updatePassword")
+    public Result updatePassword(String password,String old, int id) {
+        try {
+            ShipperInformation shipperInformation = shipperInformationService.selectByPrimaryKey(id);
+            if(shipperInformation != null){
+                if(shipperInformation.getsPassword().equals(old)){
+                    if(shipperInformationMapper.updatePassword(password,id)>0)
+                        return new Result(200,"修改成功！");
+                }
+            }
+            return new Result().error("修改失败!");
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());
         }

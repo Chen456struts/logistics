@@ -2,6 +2,7 @@ package com.cchong.logistics.controller;
 import com.cchong.logistics.entity.CollectionFee;
 import com.cchong.logistics.service.CollectionFeeService;
 import com.cchong.logistics.util.Result;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -21,6 +22,7 @@ public class CollectionFeeController {
      * @return
      */
     @GetMapping("/deleteByPrimaryKey")
+    @RequiresRoles("admin")
     public Result deleteByPrimaryKey(int id) {
         try {
 

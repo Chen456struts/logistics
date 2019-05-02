@@ -11,27 +11,27 @@
 	}
 </style>
 <template>
-	<div style="height: 100%;background-image: url(http://47.100.245.30:8080/image/bj.jpg);background-size: 100% 100%;">
+	<div style="height: 100%;background-image: url(http://localhost:8080/image/login.png);background-size: 100% 100%;">
 		<div style="height: 6%;"></div>
 		<div class="login">
 			<br />
 			<br />
-			<h1 style="color: white;">进入系统</h1>
+			<h1 style="color: white;">锦轩物流系统</h1>
 			<br />
 			<Form style="width: 350px;margin: auto;" :model="user">
-				
+
 				<FormItem>
-					<a href="#/adminindex" @click="handleSubmit()">
+					<a href="#/admin" @click="handleSubmit()">
 						<Button type="success" onclick="return false" long> 进入管理员 </Button>
 						<br />
-					</a>
-					<a href="#/index" @click="handleSubmithz()">
+					</a><br />
+					<a href="#/hz" @click="handleSubmithz()">
 						<Button type="success" onclick="return false" long> 进入货主 </Button>
-					<br />
-					</a>
-					<a href="#/index" @click="handleSubmitsj()">
+						<br />
+					</a><br />
+					<a href="#/sj" @click="handleSubmitsj()">
 						<Button type="success" onclick="return false" long> 进入司机 </Button>
-					<br />
+						<br />
 					</a>
 				</FormItem>
 			</Form>
@@ -59,15 +59,15 @@
 			}
 		},
 		methods: {
-			handleSubmit(){
-				window.location.href = "#/adminindex";
-				},
-			handleSubmithz(){
-				window.location.href = "#/khindex";
-				},
-				handleSubmitsj(){
-					window.location.href = "#/czindex";
-				}
+			handleSubmit() {
+				window.location.href = "#/admin";
+			},
+			handleSubmithz() {
+				window.location.href = "#/hz";
+			},
+			handleSubmitsj() {
+				window.location.href = "#/sj";
+			}
 		}
 	}
 </script>

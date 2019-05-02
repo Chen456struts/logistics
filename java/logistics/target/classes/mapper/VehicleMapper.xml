@@ -87,4 +87,7 @@
       </if>
     </where>
     </select>
+    <select id="selectdId" resultType="com.cchong.logistics.entity.Vehicle">
+       select * from vehicle where d_id = #{id} limit 0,1
+    </select>
 </mapper>

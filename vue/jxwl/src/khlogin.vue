@@ -11,7 +11,7 @@
 	}
 </style>
 <template>
-	<div style="height: 100%;background-image: url(http://47.100.245.30:8080/image/bj.jpg);background-size: 100% 100%;">
+	<div style="height: 100%;background-image: url(http://localhost:8080/image/bj.png);background-size: 100% 100%;">
 		<div style="height: 6%;"></div>
 		<div class="login">
 			<br />
@@ -21,8 +21,8 @@
 			<Form style="width: 330px;margin: auto;" :model="user">
 				<div :style="yhm">
 					<FormItem>
-						<Input type="text" v-model="user.name" :maxlength="15" placeholder="用户名" >
-						<Icon type="ios-person-outline" slot="prepend"></Icon>
+						<Input type="text" v-model="user.phone" :maxlength="15" placeholder="手机号码" >
+						<Icon type="md-phone-portrait" slot="prepend"></Icon>
 						</Input>
 					</FormItem>
 					<FormItem>
@@ -75,14 +75,13 @@
 				yhm: "display: block;",
 				btnhqyzm: "获取验证码",
 				user: {
-					name: '',
 					password: '',
 					phone: '',
 					yzm: '',
 					btn1: false
 				},
 				code: 1024,
-				url: "http://47.100.245.30:8080"
+				url: "http://localhost:8080"
 			}
 		},
 		methods: {
@@ -98,11 +97,11 @@
 				}
 			},
 			handleSubmit() {
+				if (this.user.phone.length != 11 || this.user.phone.trim() == "") {
+					this.$Message.warning('手机号码错误!(手机号码为11位)');
+					return false;
+				}
 				if (this.btn == "用短信验证码登录") {
-					if (this.user.name.length == 0 || this.user.name.trim() == "") {
-						this.$Message.warning('请输入账号!');
-						return false;
-					}
 					if (this.user.password.length == 0 || this.user.password.trim() == "") {
 						this.$Message.warning('请输入密码!');
 						return false;
@@ -110,17 +109,14 @@
 					var th = this;
 					axios.get(th.url + '/login/auth', {
 						params: {
-							name: th.user.name,
-							password: th.user.password
+							phone: th.user.phone,
+							password: th.user.password,
+							sf:1
 						}
 					}).then(function(res) {
 						th.bd(res);
 					});
 				} else {
-					if (this.user.phone.length == 0 || this.user.phone.trim() == "") {
-						this.$Message.warning('请输入手机号码!');
-						return false;
-					}
 					if (this.user.yzm.length == 0 || this.user.yzm.trim() == "") {
 						this.$Message.warning('请输入验证码!');
 						return false;
@@ -133,7 +129,8 @@
 					axios.get(th.url + '/login/yzm', {
 						params: {
 							phone: th.user.phone,
-							yzm: th.user.yzm
+							yzm: th.user.yzm,
+							sf:1
 						}
 					}).then(function(res) {
 						th.bd(res);
@@ -149,7 +146,7 @@
 					localStorage.setItem('mName',res.data.data.mName);
 					localStorage.setItem('mUser',res.data.data.mUser);
 					setTimeout(function() {
-						window.location.href = "/#/index/";
+						window.location.href = "/#/khindex/";
 					}, 900);
 				} else {
 					this.user.password = "";
@@ -168,7 +165,8 @@
 					th.user.btn1 = false;
 					axios.get(th.url + '/login/getyzm', {
 						params: {
-							phone: th.user.phone
+							phone: th.user.phone,
+							sf:1
 						}
 					}).then(function(res) {
 						if (res.data.code == 1203) {

@@ -69,7 +69,14 @@
 			
 		},
 		created() {
-			
+			var th = this;
+			axios.get(th.url + '/shipperInformation/selectByPrimaryKey', {
+				params: {
+					id:localStorage.getItem("mUser")
+				}
+			}).then(function(res) {
+				th.shipperInformation = res.data.data;
+			})
 		}
 	}
 </script>

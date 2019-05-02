@@ -91,10 +91,6 @@ export default new Router({
 				path: '/adminindex/orderInformationSelectdys',
 				name: 'orderInformationSelectdys',
 				component: () => import('./components/orderInformation/selectdys.vue')
-			}, {
-				path: '/adminindex/orderInformationSelectcp',
-				name: 'orderInformationSelectcp',
-				component: () => import('./components/evaluationInformation/selectcp.vue')
 			},
 			{
 				path: '/adminindex/financeInfoSelect',

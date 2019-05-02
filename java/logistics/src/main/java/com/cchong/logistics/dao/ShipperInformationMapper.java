@@ -37,7 +37,7 @@ public interface ShipperInformationMapper {
      *
      * @return
      */
-    List<ShipperInformation> selectAll(@Param("sName") String sName, @Param("sPhone") String sPhone, @Param("sSex") String sSex );
+    List<ShipperInformation> selectAll(@Param("sName") String sName, @Param("sPhone") String sPhone, @Param("sSex") String sSex);
 
     /**
      * 根据主键全部修改操作
@@ -47,9 +47,18 @@ public interface ShipperInformationMapper {
      */
     int updateByPrimaryKey(ShipperInformation shipperInformation);
 
+    //修改密码
+    int updatePassword(@Param("password") String password, @Param("sId") int sId);
     /**
      * 查询所有数据
      * @return
      */
-    int count(@Param("sName") String sName, @Param("sPhone") String sPhone, @Param("sSex") String sSex );
+    int count(@Param("sName") String sName, @Param("sPhone") String sPhone, @Param("sSex") String sSex);
+    /**
+     * 根据手机号码获取信息
+     * @param phone
+     * @return
+     */
+    ShipperInformation yzm(@Param("phone") String phone);
+
 }

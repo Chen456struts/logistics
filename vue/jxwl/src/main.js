@@ -4,7 +4,6 @@ import './plugins/axios'
 import App from './main.vue'
 import './plugins/iview.js'
 import router from './router'
-
 //引入高德地图控件
 import VueAMap from 'vue-amap';
 

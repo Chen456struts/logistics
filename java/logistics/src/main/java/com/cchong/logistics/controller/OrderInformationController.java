@@ -3,18 +3,10 @@ import com.cchong.logistics.entity.OrderInformation;
 import com.cchong.logistics.service.OrderInformationService;
 import com.cchong.logistics.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-
-import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.ParsePosition;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 import com.github.pagehelper.PageHelper;
-import org.springframework.web.context.request.WebRequest;
 
 @RestController
 @RequestMapping("/orderInformation")
@@ -134,14 +126,14 @@ public class OrderInformationController {
      * @return
      */
     @GetMapping("/selectStart")
-    public Result selectPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int limit,String oStart,String oId,String contacts) {
+    public Result selectPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int limit, String oStart, String oId, String contacts, @RequestParam(defaultValue = "0") int sId,@RequestParam(defaultValue = "0") int dId) {
         try {
             PageHelper.startPage(page, limit);
-            List<OrderInformation> list = orderInformationService.selectStart(oStart,oId,contacts);
+            List<OrderInformation> list = orderInformationService.selectStart(oStart,oId,contacts,sId,dId);
             if (list == null) {
                 return new Result().successMessage("无数据");
             } else {
-                return new Result(0, "ok", list, orderInformationService.countStart(oStart,oId,contacts));
+                return new Result(0, "ok", list, orderInformationService.countStart(oStart,oId,contacts,sId,dId));
             }
         } catch (Exception ex) {
             return new Result().error(ex.getMessage());
@@ -154,7 +146,7 @@ public class OrderInformationController {
     @GetMapping("/getCount")
     public Result getCount(@RequestParam(defaultValue = "0")int sId, @RequestParam(defaultValue = "0")int dId) {
         try {
-            int wyc = orderInformationService.countType("已完成",sId,dId);
+            int wyc = orderInformationService.countType("已",sId,dId);
             int ysz = orderInformationService.countType("运输中",sId,dId);
             int dys = orderInformationService.countType("待运输",sId,dId);
             Map<String,String> map = new HashMap<>();
@@ -166,4 +158,21 @@ public class OrderInformationController {
             return new Result().error(ex.getMessage());
         }
     }
+    /* 根据订单状态进行查询
+     *
+     * @return
+     */
+    @GetMapping("/updateSet")
+    public Result updateSet(String oId,@RequestParam(defaultValue = "0") int dId, String oState,@RequestParam(defaultValue = "0") int endDate){
+        try {
+            if(orderInformationService.updateSet(oId,dId,oState,endDate)>0){
+                return new Result(200, "操作成功！");
+            }
+            return new Result().error("操作失败！");
+        } catch (Exception ex) {
+            return new Result().error(ex.getMessage());
+        }
+    }
+
+
 }

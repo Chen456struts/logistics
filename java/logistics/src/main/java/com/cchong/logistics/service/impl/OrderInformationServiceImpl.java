@@ -83,13 +83,18 @@ public class OrderInformationServiceImpl implements OrderInformationService {
     }
 
     @Override
-    public List<OrderInformation> selectStart(String oState, String oId, String contacts) {
-        return orderInformationMapper.selectStart(oState, oId, contacts);
+    public List<OrderInformation> selectStart(String oState, String oId, String contacts,int sId,int dId) {
+        return orderInformationMapper.selectStart(oState, oId, contacts,sId,dId);
     }
 
     @Override
-    public int countStart(String oState, String oId, String contacts) {
-        return orderInformationMapper.countStart(oState, oId, contacts);
+    public int countStart(String oState, String oId, String contacts,int sId,int dId) {
+        return orderInformationMapper.countStart(oState, oId, contacts,sId,dId);
+    }
+
+    @Override
+    public int updateSet(String oId, int dId, String oState, int endDate) {
+        return orderInformationMapper.updateSet(oId,dId,oState,endDate);
     }
 
 }

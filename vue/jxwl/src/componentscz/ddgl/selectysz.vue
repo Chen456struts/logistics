@@ -10,7 +10,7 @@
 				<FormItem>
 					<Row>
 						<Col span="8" style="text-align: center;">
-						<Checkbox v-model="ddbhs" >订单编号</Checkbox>
+						<Checkbox v-model="ddbhs">订单编号</Checkbox>
 						</Col>
 						<Col span="16">
 						<Input height="20" v-model="orderInformation.oId" placeholder="模糊查询订单编号"></Input>
@@ -47,7 +47,7 @@
 			</div>
 		</div>
 
-	<Modal v-model="modal14" :loading="modal14loading" fullscreen  :title="title" @on-ok="addok">
+		<Modal v-model="modal14" :loading="modal14loading" fullscreen :title="title" @on-ok="addok">
 			<Form ref="formValidate" :model="orderInformation" :label-width="80">
 				<Row>
 					<Col span="8">
@@ -56,10 +56,10 @@
 					</FormItem>
 					</Col>
 					<Col span="8">
-					<FormItem label="车辆类型" prop="oType" >
-						<Select v-model="orderInformation.oType"   filterable>
-						<Option v-for="item in vehicleType" :value="item.tId" :key="item.vName">{{ item.vName }}</Option>
-					</Select>
+					<FormItem label="车辆类型" prop="oType">
+						<Select v-model="orderInformation.oType" filterable>
+							<Option v-for="item in vehicleType" :value="item.tId" :key="item.vName">{{ item.vName }}</Option>
+						</Select>
 					</FormItem>
 					</Col>
 					<Col span="8">
@@ -69,16 +69,16 @@
 					</Col>
 				</Row>
 				<Row>
-						<Col span="8">
-						<FormItem label="发货地址"  prop="shippingAddress">
-							<Input  v-model="orderInformation.shippingAddress"  placeholder="请输入发货地址"></Input>
-						</FormItem>
-						</Col>
-						<Col span="8">
-						<FormItem label="收货地址" prop="receivingAddress">
-							<Input  v-model="orderInformation.receivingAddress"  placeholder="请输入收货地址"></Input>
-						</FormItem>
-						</Col>
+					<Col span="8">
+					<FormItem label="发货地址" prop="shippingAddress">
+						<Input v-model="orderInformation.shippingAddress" placeholder="请输入发货地址"></Input>
+					</FormItem>
+					</Col>
+					<Col span="8">
+					<FormItem label="收货地址" prop="receivingAddress">
+						<Input v-model="orderInformation.receivingAddress" placeholder="请输入收货地址"></Input>
+					</FormItem>
+					</Col>
 					<Col span="8">
 					<FormItem label="订单价格" prop="price">
 						<Input v-model="orderInformation.price" :maxlength=18 placeholder="请输入订单价格"></Input>
@@ -88,16 +88,16 @@
 				<Row>
 					<Col span="8">
 					<FormItem label="运输车牌号" prop="dId">
-						<Select v-model="orderInformation.dId"   filterable>
+						<Select v-model="orderInformation.dId" filterable>
 							<Option v-for="item in vehicle" :value="item.iId" :key="item.iId">{{ item.license }}</Option>
 						</Select>
 					</FormItem>
 					</Col>
 					<Col span="8">
 					<FormItem label="货主名字" prop="sId">
-						<Select v-model="orderInformation.sId"  filterable>
-								<Option v-for="item in shipperInformation" :value="item.sId" :key="item.sId">{{ item.sName }}</Option>
-							</Select>
+						<Select v-model="orderInformation.sId" filterable>
+							<Option v-for="item in shipperInformation" :value="item.sId" :key="item.sId">{{ item.sName }}</Option>
+						</Select>
 					</FormItem>
 					</Col>
 					<Col span="8">
@@ -106,7 +106,7 @@
 					</FormItem>
 					</Col>
 				</Row>
-				
+
 				<Row>
 					<Col span="8">
 					<FormItem label="预约时间">
@@ -155,14 +155,14 @@
 				modal14: false,
 				loading: true,
 				modal14loading: true,
-				title:'添加订单',
-				vehicleType:"",
-				vehicle:"",
-				ddbhs:false,
-				lxhms:false,
+				title: '添加订单',
+				vehicleType: "",
+				vehicle: "",
+				ddbhs: false,
+				lxhms: false,
 				url: "http://localhost:8080",
 				count: 10,
-				shipperInformation:"",
+				shipperInformation: "",
 				columns7: [{
 						title: '订单编号',
 						key: 'oId',
@@ -200,11 +200,6 @@
 						tooltip: true,
 						align: 'center'
 					}, {
-						title: '司机编号',
-						key: 'dId',
-						tooltip: true,
-						align: 'center'
-					}, {
 						title: '货主编号',
 						key: 'sId',
 						tooltip: true,
@@ -214,32 +209,57 @@
 						key: 'oState',
 						tooltip: true,
 						align: 'center'
+					},
+					{
+						title: '操作',
+						key: 'action',
+						width: 150,
+						align: 'center',
+						render: (h, params) => {
+							return h('div', [
+								h('Button', {
+									props: {
+										type: 'primary',
+										size: 'small'
+									},
+									style: {
+										marginRight: '5px'
+									},
+									on: {
+										click: () => {
+											this.show(params.row.oId)
+										}
+									}
+								}, '完成订单')
+							]);
+
+						}
 					}
 				],
 				data6: [],
-				orderInformation:{
-					oId:0,
-					oType:"",
-					contacts:"",
-					oRemarks:"",
-					startDate:"",
-					endDate:"",
-					price:"",
-					shippingAddress:"",
-					receivingAddress:"",
-					sId:0,
-					dId:0,
-					oState:"待运输",
-					eId:0,
+				orderInformation: {
+					oId: 0,
+					oType: "",
+					contacts: "",
+					oRemarks: "",
+					startDate: "",
+					endDate: "",
+					price: "",
+					shippingAddress: "",
+					receivingAddress: "",
+					sId: 0,
+					dId: 0,
+					oState: "待运输",
+					eId: 0,
 				}
 			}
 		},
 		methods: {
-				//时间
+			//时间
 			getStartTime(starTime) {
 				this.orderInformation.startDate = starTime;
 			},
-				//时间
+			//时间
 			getStartTimeend(starTime) {
 				this.orderInformation.endDate = starTime;
 			},
@@ -249,7 +269,7 @@
 				this.modal14 = true;
 			},
 			//弹出添加保存
-			addok(){
+			addok() {
 				const th = this;
 				var urls = "insert";
 				if (this.title == "编辑车辆类型") {
@@ -269,53 +289,25 @@
 						th.$Message.error(res.data.message);
 					}
 				})
-				
+
 			},
 			//单击编辑
-			show(data){
-				this.title = "编辑订单";
-				this.orderInformation.oId=data.oId;
-				this.orderInformation.oType=data.oType;
-				this.orderInformation.contacts=data.contacts;
-				this.orderInformation.oRemarks=data.oRemarks;
-				this.orderInformation.startDate=data.startDate;
-				this.orderInformation.endDate=data.endDate;
-				this.orderInformation.price=data.price;
-				this.orderInformation.shippingAddress=data.shippingAddress;
-				this.orderInformation.receivingAddress=data.receivingAddress;
-				this.orderInformation.sId=data.sId;
-				this.orderInformation.dId=data.dId;
-				this.orderInformation.oState=data.oState;
-				this.orderInformation.eId=data.eId;
-				this.modal14 = true;
-			},
-			modal14show() {
-				this.modal14 = false;
-				setTimeout(() => {
-					this.modal14 = true;
-				}, 0);
-			},
-			//删除操作
-			remove(id){
-				this.$Modal.confirm({
-					title: '删除提示',
-					content: '<p>移除后不可恢复，确定继续？</p>',
-					onOk: () => {
-						const th = this;
-						axios.get(th.url + '/orderInformation/deleteByPrimaryKey', {
-							params: {
-								id: id
-							}
-						}).then(function(res) {
-							if (res.data.code === 200) {
-								th.$Message.success(res.data.message);
-								th.changePage(1);
-							} else {
-								th.$Message.error(res.data.message);
-							}
-						})
+			show(oId) {
+				var th = this;
+				axios.get(th.url + '/orderInformation/updateSet', {
+					params: {
+						oId: oId,
+						oState: "已完成",
+						endDate:1
 					}
-				});
+				}).then(function(res) {
+					if (res.data.code === 200) {
+						th.$Message.success("操作成功!");
+						th.changePage(1);
+					}else{
+						th.$Message.success("操作失败!");
+					}
+				})
 			},
 			//导出数据
 			exportData() {
@@ -326,18 +318,19 @@
 			//查询
 			changePage(page) {
 				const th = this;
-				if(!th.ddbhs){
+				if (!th.ddbhs) {
 					th.orderInformation.oId = '';
 				}
-				if(!th.lxhms){
+				if (!th.lxhms) {
 					th.orderInformation.contacts = '';
 				}
 				axios.get(th.url + '/orderInformation/selectStart', {
 					params: {
 						page: page,
-						oId:th.orderInformation.oId,
-						oStart:'运输中',
-						contacts:th.orderInformation.contacts
+						oId: th.orderInformation.oId,
+						oStart: '运输中',
+						contacts: th.orderInformation.contacts,
+						dId: localStorage.getItem("mUser")
 					}
 				}).then(function(res) {
 					th.data6 = res.data.data;

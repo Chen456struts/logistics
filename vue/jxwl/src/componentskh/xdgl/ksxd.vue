@@ -11,12 +11,12 @@
 				</Col>
 				<Col span="8">
 				<FormItem label="联系人电话" prop="contacts">
-					<Input v-model="orderInformation.contacts" :maxlength=18 placeholder="请输入联系人电话"></Input>
+					<Input v-model="orderInformation.contacts" :maxlength=11 placeholder="请输入联系人电话"></Input>
 				</FormItem>
 				</Col>
 				<Col span="8">
 				<FormItem label="预约时间" prop="startDate">
-					<DatePicker type="datetime" format="yyyy-MM-dd HH:mm:ss"  @on-change="datesa()" placeholder="请选择预约时间" v-model="orderInformation.startDate"
+					<DatePicker type="datetime" format="yyyy-MM-dd HH:mm:ss" @on-change="datesa()" placeholder="请选择预约时间" v-model="orderInformation.startDate"
 					 style="width: 200px"></DatePicker>
 				</FormItem>
 				</Col>
@@ -24,7 +24,7 @@
 			<Row>
 				<FormItem label="发货地址" prop="shippingAddress">
 					<Col span="3">
-					<Input v-model="fhcs" :maxlength=18 placeholder="请输入发货城市"></Input>
+					<Input v-model="fhcs" :maxlength=5 placeholder="请输入发货城市"></Input>
 					</Col>
 					<Col span="6">
 					<Select v-model="fh" filterable remote :remote-method="remoteMethod1" :loading="loading1">
@@ -35,13 +35,13 @@
 					<span>高德发货地址</span>
 					</Col>
 					<Col span="6">
-					<Input v-model="orderInformation.shippingAddress" :maxlength=18 placeholder="发货地址"></Input>
+					<Input v-model="orderInformation.shippingAddress" :maxlength=30 placeholder="发货地址"></Input>
 					</Col>
 				</FormItem>
 			</Row>
 			<FormItem label="收货地址" prop="receivingAddress">
 				<Col span="3">
-				<Input v-model="shcs" :maxlength=18 placeholder="请输入收货城市"></Input>
+				<Input v-model="shcs" :maxlength=5 placeholder="请输入收货城市"></Input>
 				</Col>
 				<Col span="6">
 				<Select v-model="sh" filterable remote :remote-method="remoteMethod2" :loading="loading1">
@@ -52,7 +52,7 @@
 				<span>高德收货地址</span>
 				</Col>
 				<Col span="6">
-				<Input v-model="orderInformation.receivingAddress" :maxlength=18 placeholder="收货地址"></Input>
+				<Input v-model="orderInformation.receivingAddress" :maxlength=30 placeholder="收货地址"></Input>
 				</Col>
 			</FormItem>
 			<Row>
@@ -83,8 +83,8 @@
 	</div>
 </template>
 
-
 <script>
+	import $ from 'jquery'
 	export default {
 		data: function() {
 			return {
@@ -121,7 +121,6 @@
 					shippingAddress: "",
 					receivingAddress: "",
 					sId: 1,
-					dId: 0,
 					oState: "待运输",
 					eId: 0,
 				}
@@ -135,23 +134,23 @@
 					return;
 				}
 				if (query.length > 0) {
-					axios.get(
-						'https://restapi.amap.com/v3/assistant/inputtips?key=894fb9d68503edc13aabaf040605f538&keywords=' + query +
-						'&type=&location=&city=' + th.fhcs + '&datatype=all'
-					).then(function(res) {
-						if (res.data.tips.length > 0) {
-							th.loading1 = true;
-							setTimeout(() => {
-								th.loading1 = false;
-								th.options1 = res.data.tips;
-								th.orderInformation.shippingAddress = th.options1[0].district + query;
-								th.fhlocation = th.options1[0].location;
-								if (th.orderInformation.receivingAddress.length > 1 && th.orderInformation.shippingAddress.length > 1) {
-									th.addss();
-								}
-							}, 50);
-						}
-					})
+
+					$.get('https://restapi.amap.com/v3/assistant/inputtips?key=894fb9d68503edc13aabaf040605f538&keywords=' + query +
+						'&type=&location=&city=' + th.fhcs + '&datatype=all',
+						function(res) {
+							if (res.tips.length > 0) {
+								th.loading1 = true;
+								setTimeout(() => {
+									th.loading1 = false;
+									th.options1 = res.tips;
+									th.orderInformation.shippingAddress = th.options1[0].district + query;
+									th.fhlocation = th.options1[0].location;
+									if (th.orderInformation.receivingAddress.length > 1 && th.orderInformation.shippingAddress.length > 1) {
+										th.addss();
+									}
+								}, 50);
+							}
+						});
 				}
 			},
 			remoteMethod2(query) {
@@ -160,21 +159,21 @@
 					return;
 				}
 				if (query.length > 0) {
-					axios.get(
-						'https://restapi.amap.com/v3/assistant/inputtips?key=894fb9d68503edc13aabaf040605f538&keywords=' + query +
-						'&type=&location=&city=' + th.shcs + '&datatype=all'
-					).then(function(res) {
-						if (res.data.tips.length > 0) {
-							th.loading1 = true;
-							setTimeout(() => {
-								th.loading1 = false;
-								th.options2 = res.data.tips;
-								th.orderInformation.receivingAddress = th.options2[0].district + query;
-								th.shlocation = th.options2[0].location;
-								th.datesa();
-							}, 100);
-						}
-					})
+					$.get('https://restapi.amap.com/v3/assistant/inputtips?key=894fb9d68503edc13aabaf040605f538&keywords=' + query +
+						'&type=&location=&city=' + th.fhcs + '&datatype=all',
+						function(res) {
+							console.log(res);
+							if (res.tips.length > 0) {
+								th.loading1 = true;
+								setTimeout(() => {
+									th.loading1 = false;
+									th.options2 = res.tips;
+									th.orderInformation.receivingAddress = th.options2[0].district + query;
+									th.shlocation = th.options2[0].location;
+									th.datesa();
+								}, 100);
+							}
+						})
 				}
 			},
 			datesa() {
@@ -184,32 +183,33 @@
 			},
 			addss() {
 				var th = this;
-				axios.get(
+				$.get(
 					'//restapi.amap.com/v3/distance?key=894fb9d68503edc13aabaf040605f538&origins=' + th.fhlocation + '&destination=' +
-					th.shlocation + '&type=1'
-				).then(function(res) {
-					th.setdates();
-					//路径距离，单位：米 
-					th.lc = res.data.results[0].distance / 1000;
-					//预计行驶时间，单位：秒 
-					th.sj = res.data.results[0].duration / 60;
-
-				})
+					th.shlocation + '&type=1',
+					function(res) {
+						th.setdates();
+						//路径距离，单位：米 
+						th.lc = res.results[0].distance / 1000;
+						//预计行驶时间，单位：秒 
+						th.sj = res.results[0].duration / 60;
+					})
 
 			},
 			ljyy() {
 				var th = this;
-					axios.post(th.url + '/orderInformation/insert', th.orderInformation, {
+				th.orderInformation.sId = localStorage.getItem("mUser");
+				axios.post(th.url + '/orderInformation/insert', th.orderInformation, {
 					headers: {
 						"Content-Type": "application/json;charset=utf-8"
 					}
 				}).then(function(res) {
 					if (res.data.code === 200) {
-						th.$Message.success(res.data.message);
+						th.$Message.success("预约成功");
+						window.location.href = "#/khindex";
 					} else {
 						th.$Message.error(res.data.message);
 					}
-				}) 
+				})
 			},
 			setdates() {
 				var th = this;
@@ -229,7 +229,6 @@
 					num1 = Math.round(num1 * 100) / 100;
 					console.log("将浮点数四舍五入，取小数点后2位：");
 					th.orderInformation.price = num1;
-					console.log(num1);
 
 				}
 				if (th.orderInformation.price < 12) {

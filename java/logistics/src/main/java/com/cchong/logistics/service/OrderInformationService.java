@@ -53,7 +53,10 @@ public interface OrderInformationService {
     int count();
 
     //根据订单状态查询
-    List<OrderInformation> selectStart(String oState, String oId, String contacts);
+    List<OrderInformation> selectStart(String oState, String oId, String contacts,int sId,int dId);
 
-    int countStart(String oState, String oId, String contacts);
+    int countStart(String oState, String oId, String contacts,int sId,int dId);
+
+    //订单号、司机id、订单状态、完成时间
+    int updateSet(@Param("oId") String oId,@Param("dId") int dId,@Param("oState") String oState,@Param("endDate") int endDate);
 }

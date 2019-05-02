@@ -10,89 +10,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36d6415a-f9e1-46d9-b025-e57729b148eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/huang.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/aspect/jurisdictionAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/VerificationCodeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/VerificationCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/LoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/SmsPhone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/VerificationCodeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/LoginServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/SmsPhoneImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/VerificationCodeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/shiro/JWTFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/shiro/JWTRealm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/shiro/JWTToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/shiro/JWTUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/shiro/ShiroConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/util/LoginOk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/VerificationCodeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/bj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/login.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/AdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/CollectionFeeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/DriverInformationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/EmployeeInformationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/EvaluationInformationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/FinanceInfoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/NoticeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/OrderInformationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/SCollectController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/ShipperInformationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/VehicleInfoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/VehicleTypeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/AdminMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/CollectionFeeMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/DriverInformationMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/EmployeeInformationMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/EvaluationInformationMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/FinanceInfoMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/NoticeMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/OrderInformationMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/SCollectMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/ShipperInformationMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/VehicleInfoMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/VehicleTypeMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/CollectionFee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/DriverInformation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/EmployeeInformation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/EvaluationInformation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/FinanceInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/Notice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/OrderInformation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/SCollect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/ShipperInformation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/VehicleInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/VehicleType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/AdminService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/CollectionFeeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/DriverInformationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/EmployeeInformationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/EvaluationInformationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/FinanceInfoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/NoticeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/OrderInformationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/SCollectService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/ShipperInformationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/VehicleInfoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/VehicleTypeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/AdminServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/CollectionFeeServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/DriverInformationServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/EmployeeInformationServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/EvaluationInformationServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/FinanceInfoServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/NoticeServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/OrderInformationServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/SCollectServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/ShipperInformationServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/VehicleInfoServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/VehicleTypeServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/util/Result.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AdminMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CollectionFeeMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/DriverInformationMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/EmployeeInformationMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/EvaluationInformationMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/FinanceInfoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/NoticeMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderInformationMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SCollectMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ShipperInformationMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/VehicleInfoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/VehicleTypeMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-service.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/CollectionFeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/CollectionFeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/DriverInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/DriverInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/EmployeeInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/EmployeeInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/EvaluationInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/EvaluationInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/FinanceInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/FinanceInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/NoticeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/NoticeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/OrderInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/OrderInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/SCollectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/SCollectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/ShipperInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/ShipperInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/VehicleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/VehicleTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/VehicleTypeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/AdminMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/DriverInformationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/DriverInformationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/EvaluationInformationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/EvaluationInformationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/OrderInformationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/OrderInformationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/ShipperInformationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/ShipperInformationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/VehicleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/VehicleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/EvaluationInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/EvaluationInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/OrderInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/OrderInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/OrderInformationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/OrderInformationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/OrderInformationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/OrderInformationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/util/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cchong/logistics/util/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AdminMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/DriverInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/DriverInformationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/EvaluationInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/EvaluationInformationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderInformationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ShipperInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShipperInformationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/VehicleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/VehicleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/CollectionFeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/CollectionFeeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/DriverInformationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/DriverInformationController.class" afterDir="false" />
@@ -100,62 +73,34 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/EvaluationInformationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/EvaluationInformationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/FinanceInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/FinanceInfoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/NoticeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/NoticeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/OrderInformationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/OrderInformationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/OrderInformationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/SCollectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/SCollectController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/ShipperInformationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/ShipperInformationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/VehicleInfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/VehicleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/VehicleController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/VehicleTypeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/controller/VehicleTypeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/CollectionFeeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/CollectionFeeMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/AdminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/AdminMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/DriverInformationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/DriverInformationMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/EvaluationInformationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/EvaluationInformationMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/FinanceInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/FinanceInfoMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/NoticeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/NoticeMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/OrderInformationMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/OrderInformationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/OrderInformationMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/ShipperInformationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/ShipperInformationMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/VehicleInfoMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/VehicleTypeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/VehicleTypeMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/DriverInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/DriverInformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/EmployeeInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/EmployeeInformation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/VehicleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/dao/VehicleMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/EvaluationInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/EvaluationInformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/FinanceInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/FinanceInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/Notice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/Notice.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/OrderInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/OrderInformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/ShipperInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/ShipperInformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/VehicleInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/VehicleType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/entity/VehicleType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/CollectionFeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/CollectionFeeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/DriverInformationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/DriverInformationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/EvaluationInformationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/EvaluationInformationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/FinanceInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/FinanceInfoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/NoticeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/NoticeService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/OrderInformationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/OrderInformationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/ShipperInformationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/ShipperInformationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/VehicleInfoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/VehicleTypeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/VehicleTypeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/CollectionFeeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/CollectionFeeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/DriverInformationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/DriverInformationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/EvaluationInformationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/EvaluationInformationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/FinanceInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/FinanceInfoServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/NoticeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/NoticeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/OrderInformationServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/ShipperInformationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/ShipperInformationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/VehicleInfoServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/VehicleTypeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/VehicleTypeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/OrderInformationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/service/impl/OrderInformationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cchong/logistics/util/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cchong/logistics/util/Result.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CollectionFeeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/CollectionFeeMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/DriverInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/DriverInformationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/EmployeeInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/EmployeeInformationMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/EvaluationInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/EvaluationInformationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/FinanceInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/FinanceInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/NoticeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/NoticeMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/OrderInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/OrderInformationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/SCollectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/SCollectMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/ShipperInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ShipperInformationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/VehicleInfoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/VehicleTypeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/VehicleTypeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/VehicleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/VehicleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/spring-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/spring-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/spring-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/spring-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/contact/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/CollectionFeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/CollectionFeeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/DriverInformationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/DriverInformationController.class" afterDir="false" />
@@ -166,77 +111,64 @@
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/OrderInformationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/OrderInformationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/SCollectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/SCollectController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/ShipperInformationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/ShipperInformationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/VehicleInfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/VehicleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/VehicleController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/VehicleTypeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/controller/VehicleTypeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/CollectionFeeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/CollectionFeeMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/AdminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/AdminMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/DriverInformationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/DriverInformationMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/EvaluationInformationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/EvaluationInformationMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/FinanceInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/FinanceInfoMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/NoticeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/NoticeMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/OrderInformationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/OrderInformationMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/ShipperInformationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/ShipperInformationMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/VehicleInfoMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/VehicleTypeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/VehicleTypeMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/DriverInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/DriverInformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/EmployeeInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/EmployeeInformation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/VehicleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/dao/VehicleMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/EvaluationInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/EvaluationInformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/FinanceInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/FinanceInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/Notice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/Notice.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/OrderInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/OrderInformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/ShipperInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/ShipperInformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/VehicleInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/VehicleType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/entity/VehicleType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/CollectionFeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/CollectionFeeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/DriverInformationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/DriverInformationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/EvaluationInformationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/EvaluationInformationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/FinanceInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/FinanceInfoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/NoticeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/NoticeService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/OrderInformationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/OrderInformationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/ShipperInformationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/ShipperInformationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/VehicleInfoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/VehicleTypeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/VehicleTypeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/CollectionFeeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/CollectionFeeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/DriverInformationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/DriverInformationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/EvaluationInformationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/EvaluationInformationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/FinanceInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/FinanceInfoServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/NoticeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/NoticeServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/OrderInformationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/OrderInformationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/ShipperInformationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/ShipperInformationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/VehicleInfoServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/VehicleTypeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/service/impl/VehicleTypeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/util/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/com/cchong/logistics/util/Result.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/CollectionFeeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/CollectionFeeMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/DriverInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/DriverInformationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/EmployeeInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/EmployeeInformationMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/EvaluationInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/EvaluationInformationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/FinanceInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/FinanceInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/NoticeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/NoticeMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/OrderInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/OrderInformationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/SCollectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/SCollectMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/ShipperInformationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/ShipperInformationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/VehicleInfoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/VehicleTypeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/VehicleTypeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/VehicleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mapper/VehicleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/spring-web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/spring/spring-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/spring/spring-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/classes/spring/spring-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/classes/spring/spring-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/contact/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/contact/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/adminindex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/adminindex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/adminlogin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/adminlogin.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/components/admin/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/components/admin/select.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/components/collectionFee/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/components/collectionFee/select.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/components/driverInformation/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/components/driverInformation/select.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/components/employeeInformation/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/components/employeeInformation/select.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/components/evaluationInformation/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/components/evaluationInformation/select.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/components/notice/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/components/notice/select.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/components/scollect/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/components/scollect/select.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/components/shipperInformation/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/components/shipperInformation/select.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/components/vehicle/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/components/vehicle/select.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/components/evaluationInformation/selectcp.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/components/orderInformation/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/components/orderInformation/select.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/components/orderInformation/selectdys.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/components/orderInformation/selectdys.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/components/orderInformation/selectysz.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/components/orderInformation/selectysz.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/components/orderInformation/selectywc.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/components/orderInformation/selectywc.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/componentscz/ddgl/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/componentscz/ddgl/select.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/componentscz/ddgl/selectysz.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/componentscz/ddgl/selectysz.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/componentscz/ddgl/selectywc.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/componentscz/ddgl/selectywc.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/componentscz/grzl/wdcl.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/componentscz/grzl/wdcl.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/componentscz/grzl/wdxx.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/componentscz/grzl/wdxx.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/componentscz/grzl/xtsz.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/componentscz/grzl/xtsz.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/componentscz/jdkl/ksjd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/componentscz/jdkl/ksjd.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/componentskh/ddgl/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/componentskh/ddgl/select.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/componentskh/ddgl/selectdys.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/componentskh/ddgl/selectdys.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/componentskh/ddgl/selectysz.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/componentskh/ddgl/selectysz.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/componentskh/ddgl/selectywc.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/componentskh/ddgl/selectywc.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/componentskh/grzl/wdxx.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/componentskh/grzl/wdxx.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/czindex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/czindex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/czlogin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/czlogin.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/khindex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/khindex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/khlogin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/khlogin.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/main.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/plugins/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/plugins/axios.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/views/czindex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/views/czindex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/jxwl/src/views/khindex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/jxwl/src/views/khindex.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -356,9 +288,124 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1412925898">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="34" />
+          <entry key="java" value="172" />
+          <entry key="png" value="1" />
+          <entry key="properties" value="1" />
+          <entry key="xml" value="51" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="34" />
+          <entry key="Image" value="1" />
+          <entry key="JAVA" value="172" />
+          <entry key="Properties" value="1" />
+          <entry key="XML" value="51" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="1079" />
+          <entry key="properties" value="1" />
+          <entry key="xml" value="347" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="1079" />
+          <entry key="Properties" value="1" />
+          <entry key="SQL" value="27" />
+          <entry key="XML" value="320" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/OrderInformationServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1539">
+              <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+              <folding>
+                <element signature="e#868#869#0" expanded="true" />
+                <element signature="e#938#939#0" expanded="true" />
+                <element signature="e#1221#1222#0" expanded="true" />
+                <element signature="e#1290#1291#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/OrderInformationController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="79">
+              <caret line="127" column="31" lean-forward="true" selection-start-line="127" selection-start-column="31" selection-end-line="127" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/VehicleController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1944">
+              <caret line="80" column="14" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/VehicleMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="972">
+              <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/VehicleMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2457">
+              <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/Vehicle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1890">
+              <caret line="74" column="36" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -369,24 +416,40 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>selectP</find>
-      <find>Pag</find>
       <find>selectPage</find>
-      <find>selectStart</find>
       <find>Date</find>
       <find>selectA</find>
       <find>updateByPrimaryKey</find>
       <find>All</find>
-      <find>update</find>
       <find>ins</find>
       <find>m_date</find>
       <find>orderInformation</find>
       <find>dele</find>
       <find>insert</find>
       <find>getSt</find>
+      <find>SecurityManager</find>
+      <find>return Result.successMessage(&quot;登录成功&quot;,</find>
+      <find>yzm</find>
+      <find>username.length()</find>
+      <find>getdPassword</find>
+      <find>DefaultWebSecurityManager</find>
+      <find>org.aspectj</find>
+      <find>DefaultAdvisorAutoProxyCreator</find>
+      <find>LifecycleBeanPostProcessor</find>
+      <find>insufficientAuthority</find>
+      <find>securityManager</find>
+      <find>selectStart</find>
+      <find>update</find>
+      <find>selectByPrimaryKey</find>
+      <find>RequiresRoles</find>
+      <find>eId</find>
+      <find>e_id</find>
+      <find>endDate</find>
+      <find>set</find>
     </findStrings>
     <replaceStrings>
       <replace>fraction</replace>
+      <replace>return Result.successMessage(1028,&quot;登录成功&quot;,</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -395,57 +458,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/DriverInformationServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/DriverInformationController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/DriverInformationMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/DriverInformationMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/ShipperInformationService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/ShipperInformationServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/ShipperInformationController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ShipperInformationMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/ShipperInformationMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/VehicleTypeMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/VehicleTypeMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/VehicleTypeService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/VehicleTypeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/VehicleTypeController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/Vehicle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/VehicleService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/VehicleMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/VehicleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/VehicleController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/EvaluationInformationMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/EvaluationInformationService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/EvaluationInformationServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/EvaluationInformationController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/EvaluationInformationMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/FinanceInfoMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/FinanceInfoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/FinanceInfoService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/FinanceInfoMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/CollectionFeeMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/CollectionFeeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/FinanceInfoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/CollectionFeeService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/CollectionFeeController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/CollectionFeeMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/VehicleMapper.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring-web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/OrderInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/Admin.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/AdminMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/NoticeMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/NoticeMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/NoticeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/NoticeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/VerificationCodeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/LoginService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/util/Result.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/shiro/ShiroConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/shiro/JWTRealm.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-jurisdiction.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-service.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring-web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/aspect/jurisdictionAdvice.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/CollectionFeeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/FinanceInfoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/SCollectController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/VehicleTypeController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/NoticeController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/ShipperInformationMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/ShipperInformationMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/AdminMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/AdminMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/DriverInformationMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/DriverInformationMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/ShipperInformationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/DriverInformationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/EmployeeInformationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/OrderInformationService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/OrderInformationServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/OrderInformationController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/OrderInformationMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/OrderInformationMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/OrderInformation.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/OrderInformationMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/EvaluationInformation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/LoginServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/EvaluationInformationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/EvaluationInformationMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/EvaluationInformationMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/OrderInformationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/VehicleMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/VehicleController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/VehicleMapper.xml" />
       </list>
     </option>
   </component>
@@ -464,6 +527,14 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="A:/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="A:\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
@@ -498,9 +569,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="166" />
-    <option name="y" value="289" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="198" />
+    <option name="y" value="206" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
@@ -513,6 +584,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -571,7 +643,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="logistics" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="logistics" type="b2602c69:ProjectViewProjectNode" />
@@ -581,7 +653,24 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="logistics" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="shiro" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="logistics" type="b2602c69:ProjectViewProjectNode" />
@@ -598,12 +687,42 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="image" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -611,11 +730,26 @@
     <property name="SearchEverywhereHistoryKey" value="getCount&#9;PSI&#9;JAVA://com.cchong.logistics.controller.OrderInformationController#getCount" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555841442584" />
-    <property name="last_opened_file_path" value="H:/cmdbnew/cmdb" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556702604118" />
+    <property name="last_opened_file_path" value="E:/Graduationproject-/studentUnionManagementSystem" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cchong.logistics.controller.aspect" />
+      <recent name="com.cchong.logistics.entity" />
+      <recent name="com.cchong.logistics.dao" />
+      <recent name="com.cchong.logistics.controller" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\git\logisticss\logistics\java\logistics\src\main\resources\spring" />
+      <recent name="G:\git\logisticss\logistics\java\logistics\src\main\webapp\image" />
+      <recent name="G:\git\logisticss\logistics\java\logistics\src\main\resources\mapper" />
+      <recent name="G:\git\logisticss\logistics\java\logistics\src\main\java\com\cchong\logistics\util" />
+      <recent name="G:\git\logisticss\logistics\java\logistics\src\main\java\com\cchong\logistics" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -630,6 +764,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.tomcat8.5">
+    <configuration name="JWTRealm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cchong.logistics.shiro.JWTRealm" />
+      <module name="logistics" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cchong.logistics.shiro.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OrderInformationController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cchong.logistics.controller.OrderInformationController" />
       <module name="logistics" />
@@ -760,9 +907,11 @@
       <item itemvalue="Tomcat Server.tomcat8.5" />
       <item itemvalue="Application.Test" />
       <item itemvalue="Application.OrderInformationController" />
+      <item itemvalue="Application.JWTRealm" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.JWTRealm" />
         <item itemvalue="Application.OrderInformationController" />
         <item itemvalue="Application.Test" />
       </list>
@@ -813,11 +962,18 @@
       <workItem from="1555635863904" duration="11307000" />
       <workItem from="1555821977408" duration="107000" />
       <workItem from="1555822172461" duration="4786000" />
+      <workItem from="1556432127543" duration="4497000" />
+      <workItem from="1556436680060" duration="3103000" />
+      <workItem from="1556452309243" duration="10696000" />
+      <workItem from="1556545558913" duration="5159000" />
+      <workItem from="1556608927123" duration="231000" />
+      <workItem from="1556614646321" duration="27462000" />
+      <workItem from="1556775149292" duration="662000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79404000" />
+    <option name="totallyTimeSpent" value="131214000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -830,8 +986,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23600605" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2246596" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -842,8 +999,49 @@
       <window_info id="JRebel" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29508197" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8733528" weight="0.19508196" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.07540984" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8733528" weight="0.1852459" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4978038" weight="0.3180328" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49848714" weight="0.3295082" />
+      <window_info anchor="bottom" auto_hide="true" x="3" y="235" width="1366" height="438" id="Event Log" order="9" sideWeight="0.12664714" side_tool="true" weight="0.693038" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49924356" weight="0.3295082" />
+      <window_info anchor="bottom" id="Spring" order="11" sideWeight="0.49924356" weight="0.3295082" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" sideWeight="0.49924356" weight="0.3295082" />
+      <window_info anchor="bottom" id="Problems" order="13" sideWeight="0.49924356" weight="0.62786883" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.052459016" />
+      <window_info anchor="bottom" id="Application Servers" order="15" sideWeight="0.49924356" weight="0.3295082" />
+      <window_info anchor="bottom" id="JRebel Executor" order="16" weight="0.3295082" />
+      <window_info anchor="bottom" id="JRebel Console" order="17" sideWeight="0.5015129" side_tool="true" weight="0.15409836" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32928678" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.18381241" />
+      <window_info anchor="right" id="CDI" order="9" weight="0.32980332" />
+      <window_info anchor="right" id="JSF" order="10" />
+      <window_info anchor="right" id="Bean Validation" order="11" visible="true" weight="0.0892587" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24659607" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info id="JRebel" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.07540984" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.8733528" visible="true" weight="0.17377049" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4978038" weight="0.318038" />
@@ -866,44 +1064,7 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Database" order="7" weight="0.32928678" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.1107739" />
-      <window_info anchor="right" id="JSF" order="9" />
-      <window_info anchor="right" id="CDI" order="10" />
-      <window_info anchor="right" id="Bean Validation" order="11" weight="0.32980332" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22692889" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3295082" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.14262295" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Spring" order="11" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3289689" />
-      <window_info anchor="bottom" id="Application Servers" order="14" weight="0.3295082" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.32980332" />
+      <window_info anchor="right" id="Maven Projects" order="8" visible="true" weight="0.04236006" />
       <window_info anchor="right" id="JSF" order="9" />
       <window_info anchor="right" id="CDI" order="10" />
       <window_info anchor="right" id="Bean Validation" order="11" weight="0.32980332" />
@@ -915,392 +1076,358 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/CollectionFeeController.java</url>
-          <line>41</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/VehicleTypeServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/shiro/JWTFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="81" column="46" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
+        <state relative-caret-position="2798">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/VehicleTypeMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/image/bj.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_31/src.zip!/java/lang/annotation/ElementType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1458">
-          <caret line="70" column="56" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="56" />
+        <state relative-caret-position="171">
+          <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/aspectj/aspectjweaver/1.9.1/aspectjweaver-1.9.1.jar!/org/aspectj/lang/ProceedingJoinPoint.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/shiro/ShiroConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-jurisdiction.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-186">
+          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/shiro/JWTRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.2.3/shiro-core-1.2.3.jar!/org/apache/shiro/authz/annotation/RequiresRoles.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/aspect/jurisdictionAdvice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.jar!/org/apache/ibatis/binding/MapperProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ShipperInformationMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="80" column="3" lean-forward="true" selection-start-line="80" selection-start-column="3" selection-end-line="90" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/Vehicle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4347">
-          <caret line="66" column="26" lean-forward="true" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/EvaluationInformationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="51" column="50" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DriverInformationMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="103" column="58" lean-forward="true" selection-start-line="103" selection-start-column="28" selection-end-line="103" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/EvaluationInformationServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="78" column="15" selection-start-line="78" selection-start-column="15" selection-end-line="78" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/EvaluationInformationMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="77" column="48" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/EvaluationInformationMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="4" column="43" lean-forward="true" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-web/5.1.0.RELEASE/spring-web-5.1.0.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_31/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/FinanceInfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/FinanceInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
-          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/FinanceInfoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/FinanceInfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/CollectionFeeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1519">
-          <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/CollectionFeeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="56" column="42" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/CollectionFeeMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1085">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CollectionFeeMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="29" column="33" lean-forward="true" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/CollectionFeeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-620">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/VehicleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="77" column="18" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/VehicleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/VehicleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/VehicleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/VehicleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="68" column="42" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/FinanceInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="89" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/FinanceInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2821">
-          <caret line="129" column="22" lean-forward="true" selection-start-line="129" selection-start-column="22" selection-end-line="129" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.pom">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-651" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-context/5.1.0.RELEASE/spring-context-5.1.0.RELEASE.jar!/org/springframework/format/annotation/DateTimeFormat.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/EvaluationInformationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1736">
-          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/Admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <element signature="e#317#318#0" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
-            <element signature="e#390#391#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/OrderInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="34" column="28" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/EmployeeInformationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="111" column="49" lean-forward="true" selection-start-line="111" selection-start-column="49" selection-end-line="111" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/AdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/AdminMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="38" column="25" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="25" />
+        <state relative-caret-position="227">
+          <caret line="53" column="22" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/AdminMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
+        <state relative-caret-position="224">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/AdminServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/DriverInformationMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="56" column="31" lean-forward="true" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
-          <folding>
-            <element signature="e#1085#1086#0" expanded="true" />
-            <element signature="e#1131#1132#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="156">
+          <caret line="26" column="82" lean-forward="true" selection-start-line="26" selection-start-column="82" selection-end-line="26" selection-end-column="82" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/NoticeMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/ShipperInformationMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="53" column="7" lean-forward="true" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
+        <state relative-caret-position="237">
+          <caret line="53" column="14" lean-forward="true" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/NoticeMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DriverInformationMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+        <state relative-caret-position="333">
+          <caret line="63" column="13" lean-forward="true" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/NoticeServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/AdminMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="81" column="37" lean-forward="true" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
-          <folding>
-            <element signature="e#1101#1102#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-            <element signature="e#1544#1545#0" expanded="true" />
-            <element signature="e#1606#1607#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="216">
+          <caret line="63" column="17" lean-forward="true" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/CollectionFeeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="95" column="33" selection-start-line="95" selection-start-column="27" selection-end-line="95" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/EmployeeInformationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="40" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/FinanceInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/NoticeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="123" column="44" lean-forward="true" selection-start-line="123" selection-start-column="44" selection-end-line="123" selection-end-column="44" />
+        <state relative-caret-position="54">
+          <caret line="56" column="38" lean-forward="true" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/NoticeService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/SCollectController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+        <state relative-caret-position="147">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/OrderInformationController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="158" column="51" selection-start-line="158" selection-start-column="51" selection-end-line="158" selection-end-column="51" />
+        <state relative-caret-position="254">
+          <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/DriverInformationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3839">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/ShipperInformationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/EmployeeInformationMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/VehicleTypeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1755">
+          <caret line="65" column="32" lean-forward="true" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-service.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1372">
+          <caret line="52" column="15" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/OrderInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/EvaluationInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/EmployeeInformationMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/EvaluationInformationMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="120" column="57" selection-start-line="120" selection-start-column="57" selection-end-line="120" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/EvaluationInformationMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="39" column="31" lean-forward="true" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/EvaluationInformationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="88" column="34" lean-forward="true" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/OrderInformationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="116">
           <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/LoginServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="141" column="49" selection-start-line="141" selection-start-column="49" selection-end-line="141" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1269">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/OrderInformationMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="117" column="84" selection-start-line="117" selection-start-column="80" selection-end-line="117" selection-end-column="84" />
+        <state relative-caret-position="124">
+          <caret line="68" column="30" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/OrderInformationMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="914">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="161">
+          <caret line="62" column="9" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/util/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="164" column="14" lean-forward="true" selection-start-line="164" selection-start-column="14" selection-end-line="164" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.0.RELEASE/spring-web-5.1.0.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="121" selection-start-line="121" selection-end-line="121" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/service/impl/OrderInformationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+        <state relative-caret-position="1539">
+          <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
           <folding>
             <element signature="e#868#869#0" expanded="true" />
             <element signature="e#938#939#0" expanded="true" />
             <element signature="e#1221#1222#0" expanded="true" />
             <element signature="e#1290#1291#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/VehicleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1944">
+          <caret line="80" column="14" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/dao/VehicleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/VehicleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2457">
+          <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/entity/Vehicle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="74" column="36" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cchong/logistics/controller/OrderInformationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="127" column="31" lean-forward="true" selection-start-line="127" selection-start-column="31" selection-end-line="127" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

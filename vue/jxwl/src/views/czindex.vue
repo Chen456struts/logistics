@@ -52,7 +52,11 @@
 		},
 		created() {
 		const th = this;
-		axios.get(th.url + '/orderInformation/getCount')
+		axios.get(th.url + '/orderInformation/getCount', {
+						params: {
+							dId:localStorage.getItem("mUser")
+						}
+					})
 			.then(function(res) {
 				th.dys = Number(res.data.data.dys);
 				th.ywc = Number(res.data.data.ywc);
